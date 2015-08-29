@@ -31,6 +31,12 @@ public class Person1 {
 	 */
 	private String calc(String input) {
 	  //Person 1 put your implementation here
+	  if (input != null && input.length()>= 2){
+	  	String temp = "";	
+	  	temp += input.substring(2,input.length()-1);
+	  	temp += input.charAt(0) + input.charAt(1);
+	  	return temp;
+	  }
 	  return null;
 	}
 	
