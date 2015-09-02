@@ -49,5 +49,5 @@ public class Person3 {
             newStr = newStr + input.charAt(i);
         }
         return newStr;
-	}
+    }
 }
