@@ -43,11 +43,11 @@ public class Person3 {
 	 */
 	private String calc(String input) {
         //Person 3 put your implementation here
-		String newStr = " ";
-		int len = input.length() - 1;
-		for(int i = len; i >= 0; i--) {
-			newStr = newStr + input.charAt(i);
-		}
+        String newStr = " ";
+        int len = input.length() - 1;
+        for(int i = len; i >= 0; i--) {
+            newStr = newStr + input.charAt(i);
+        }
         return newStr;
 	}
 }
