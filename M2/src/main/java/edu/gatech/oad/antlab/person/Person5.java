@@ -5,7 +5,7 @@
  *  returns their name and a
  *  modified string 
  *  
- *  @author Ziyin Zhang
+ *  @author Bob
  *  @version 1.1
  */
 public class Person5 {
