@@ -1,15 +1,17 @@
 apply plugin: 'java'
+defaultTasks 'build'
+
+sourceCompatibility = 1.7
+version = '0.1.0'
+
 jar {
-	baseName ='gs-gradle'
-	version = '0.1.0'
+    manifest {
+        attributes 'Implementation-Title': 'jjoyce30 Gradle', 'Implementation-Version': version, 'Main-Class': 'edu,gatech.oad.antlab.pkg1.AntLabMain'
+    }
 }
-task wrapper(type: Wrapper) {
-	gradleVersion = '2.6'
+repositories {
+    mavenCentral()
 }
-compileJava {
-	options.fork = true
-	options.incremental = true
-}
-task myJavadocs(type: Javadoc) {
-  source = sourceSets.main.allJava
+dependencies {
+    compile files('lib/resources.jar')
 }
