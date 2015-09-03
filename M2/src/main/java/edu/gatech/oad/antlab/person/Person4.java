@@ -34,7 +34,7 @@ public class Person4 {
       for (int i = 0; i < input.length(); i++) {
         ret.append(input.charAt(i) + 1);
       }
-      return ret;
+      return ret.toString();
     }
     
     /**
