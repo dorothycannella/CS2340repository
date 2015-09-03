@@ -6,15 +6,12 @@ version = '0.1.0'
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'jjoyce30 Gradle', 'Implementation-Version': version, 'Main-Class': 'edu,gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path": '../../lib/resources.jar'
+        attributes 'Implementation-Title': 'jjoyce30 Gradle', 'Implementation-Version': version, 'Main-Class': 'edu,gatech.oad.antlab.pkg1.AntLabMain'
     }
-}
-task wrapper(type: Wrapper) {
-	gradleVersion = '2.6'
-}
-dependancies {
-    compile files('lib/resources.jar')
 }
 repositories {
     mavenCentral()
+}
+dependencies {
+    compile files('lib/resources.jar')
 }
