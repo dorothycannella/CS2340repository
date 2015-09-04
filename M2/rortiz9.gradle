@@ -1,4 +1,3 @@
-
 defaultTasks 'build'
 apply plugin: 'java'
 
@@ -7,7 +6,7 @@ version = '1.0'
 
 jar {
     manifest {
-          attributes 'Implementation-Title': 'tabney3 Gradle', 'Implementation-Version': version, 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': '../../lib/resources.jar'
+          attributes 'Implementation-Title': 'rortiz9 Gradle', 'Implementation-Version': version, 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': '../../lib/resources.jar'
     }
 }
 
