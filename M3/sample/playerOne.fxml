@@ -53,7 +53,7 @@
             <Insets left="5.0" />
          </GridPane.margin>
       </Text>
-      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Continue &gt;&gt;" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4">
+      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Submit" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
