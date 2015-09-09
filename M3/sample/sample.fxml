@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
@@ -9,38 +11,51 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="CENTER" hgap="10.0" prefHeight="726.9998779296875" prefWidth="1082.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.sampleController">
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="726.9998779296875" prefWidth="1082.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.sampleController">
   <children>
-    <RadioButton fx:id="difficultyTournament" mnemonicParsing="false" text="Tournament" GridPane.columnIndex="2" GridPane.rowIndex="4">
+    <RadioButton fx:id="difficultyTournament" mnemonicParsing="false" text="Tournament" textFill="DARKORANGE" GridPane.columnIndex="2" GridPane.rowIndex="4">
       <toggleGroup>
         <ToggleGroup fx:id="Difficulty" />
       </toggleGroup>
     </RadioButton>
-    <RadioButton fx:id="difficultyStandard" mnemonicParsing="false" prefHeight="77.0" prefWidth="250.0" text="Standard" toggleGroup="$Difficulty" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-    <RadioButton id="difficulty" fx:id="difficultyBeginner" mnemonicParsing="false" text="Beginner" toggleGroup="$Difficulty" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Difficulty Level:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-    <RadioButton fx:id="standardMap" mnemonicParsing="false" text="Standard Map" GridPane.columnIndex="1" GridPane.rowIndex="2">
+    <RadioButton fx:id="difficultyStandard" mnemonicParsing="false" prefHeight="77.0" prefWidth="250.0" text="Standard" textFill="DARKORANGE" toggleGroup="$Difficulty" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+    <RadioButton id="difficulty" fx:id="difficultyBeginner" mnemonicParsing="false" text="Beginner" textFill="DARKORANGE" toggleGroup="$Difficulty" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Text fill="#ff8c00" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Difficulty Level:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <RadioButton fx:id="standardMap" mnemonicParsing="false" text="Standard Map" textFill="#07c5ff" GridPane.columnIndex="1" GridPane.rowIndex="2">
       <toggleGroup>
         <ToggleGroup fx:id="mapType" />
       </toggleGroup>
     </RadioButton>
-    <RadioButton fx:id="randomMap" mnemonicParsing="false" text="Random Map" toggleGroup="$mapType" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Map Type:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GAME CONFIGURATION SCREEN" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+    <RadioButton fx:id="randomMap" mnemonicParsing="false" text="Random Map" textFill="#07c5ff" toggleGroup="$mapType" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Text fill="#07c5ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Map Type:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME CONFIGURATION SCREEN" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
       <font>
-        <Font name="Bookman Old Style" size="30.0" />
+        <Font name="Arial Bold" size="30.0" />
       </font>
     </Text>
-    <RadioButton fx:id="one" mnemonicParsing="false" text="1" GridPane.columnIndex="3" GridPane.rowIndex="2">
+    <RadioButton fx:id="one" mnemonicParsing="false" text="1" textFill="#e771ff" GridPane.columnIndex="3" GridPane.rowIndex="2">
       <toggleGroup>
         <ToggleGroup fx:id="numPlayers" />
       </toggleGroup>
     </RadioButton>
-    <RadioButton fx:id="two" mnemonicParsing="false" text="2" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-    <RadioButton mnemonicParsing="false" text="3" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-    <RadioButton mnemonicParsing="false" text="4" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-    <Button id="submitConfig" mnemonicParsing="false" text="SUBMIT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+    <RadioButton fx:id="two" mnemonicParsing="false" text="2" textFill="#e771ff" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    <RadioButton mnemonicParsing="false" text="3" textFill="#e771ff" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <RadioButton mnemonicParsing="false" text="4" textFill="#e771ff" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+    <Text fill="#e771ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <Button id="submitConfig" mnemonicParsing="false" text="SUBMIT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.5625" startY="0.23076923076923078">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#212140" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <image>
+            <Image url="@../../../GeorgiaTech.png" />
+         </image>
+      </ImageView>
   </children>
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="110.0" />
@@ -50,12 +65,12 @@
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="123.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="355.0" minHeight="10.0" prefHeight="135.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="368.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="428.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="357.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="266.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="355.0" minHeight="10.0" prefHeight="85.31134033203125" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="368.0" minHeight="10.0" prefHeight="70.31134033203125" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="69.36874389648438" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="428.0" minHeight="10.0" prefHeight="59.340057373046875" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="357.0" minHeight="10.0" prefHeight="58.34002685546875" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="266.0" minHeight="10.0" prefHeight="101.65997314453125" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
   </rowConstraints>
 </GridPane>
