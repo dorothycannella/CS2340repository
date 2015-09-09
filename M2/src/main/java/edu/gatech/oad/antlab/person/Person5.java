@@ -31,7 +31,15 @@ public class Person5 {
 	 */
 	private String calc(String input) {
 	  //Person 5 put your implementation here
-	  return null;
+		if (input.length() <= 2)
+			return input;
+		else {
+			String newString;
+			newString = input.substring(2,input.length());
+			String firstTwo = input.substring(0, 2);
+
+			return newString + firstTwo;
+		}
 	}
 	
 	/**
@@ -45,5 +53,6 @@ public class Person5 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
+
 
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="108.83084106445312" minHeight="10.0" prefHeight="108.83084106445312" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="126.19046783447266" minHeight="10.0" prefHeight="69.16915893554688" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="143.45201110839844" minHeight="10.0" prefHeight="74.80953216552734" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="149.19046020507812" minHeight="10.0" prefHeight="72.54798889160156" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="74.83651733398438" minHeight="10.0" prefHeight="13.9075927734375" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Configeration" wrappingWidth="391.25643277168274">
+         <font>
+            <Font size="32.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a Name:" wrappingWidth="78.2069091796875" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Race:" wrappingWidth="75.05823516845703" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Text>
+      <RadioButton mnemonicParsing="false" text="Bonzoid" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="Human" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="Blue" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="Ugaite" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="Green" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="Yellow" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Color:" wrappingWidth="75.72981262207031" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Text>
+      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Continue &gt;&gt;" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Button>
+      <RadioButton mnemonicParsing="false" text="Red" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="Orange" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="Buzzite" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="Flapper" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="Dororthy" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <RadioButton mnemonicParsing="false" text="Jackie" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <RadioButton mnemonicParsing="false" text="Linda" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <RadioButton mnemonicParsing="false" text="Tyler" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <RadioButton mnemonicParsing="false" text="Raymond" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+   </children>
+</GridPane>
