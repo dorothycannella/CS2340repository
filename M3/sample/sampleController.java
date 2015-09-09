@@ -32,13 +32,35 @@ public class sampleController {
     @FXML
     private RadioButton raceBuzzite;
     @FXML
-    private Button submitConfig;
+    private Button submit;
+    @FXML
+    private Button continueToPlay;
     @FXML
     private ToggleGroup mapType;
     @FXML
     private ToggleGroup numPlayers;
     @FXML
     private ToggleGroup Difficulty;
+    @FXML
+    private RadioButton blue;
+    @FXML
+    private RadioButton green;
+    @FXML
+    private RadioButton yellow;
+    @FXML
+    private RadioButton red;
+    @FXML
+    private RadioButton orange;
+    @FXML
+    private RadioButton dorothy;
+    @FXML
+    private RadioButton jackie;
+    @FXML
+    private RadioButton linda;
+    @FXML
+    private RadioButton tyler;
+    @FXML
+    private RadioButton raymond;
 
     private String race;
     private String map;
