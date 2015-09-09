@@ -3,8 +3,12 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.Scene;
 
 import java.awt.*;
+
+scene.getStylesheets().add(this.getClass()
+.getResource(“controlStyle.css”).toExternalForm());
 
 public class sampleController {
     @FXML

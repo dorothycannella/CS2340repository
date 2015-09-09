@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
 public class Main extends Application {
 
     @Override
@@ -14,6 +15,7 @@ public class Main extends Application {
         primaryStage.setTitle("MULE Configuration");
         primaryStage.setScene(new Scene(root, 515, 300));
         primaryStage.show();
+        String css = this.getClass().getResource("controlStyle.css").toExternalForm();
     }
 
 
