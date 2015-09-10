@@ -66,6 +66,12 @@ public class sampleController {
     private String map;
     private String difficultyLevel;
     private int numOfPlayers;
+    
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+        // Button was clicked, do something...
+        outputTextArea.appendText("Button Action\n");
+    }
 
 
 
