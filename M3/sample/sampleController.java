@@ -10,6 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+
 
 public class sampleController {
     @FXML
@@ -27,23 +30,25 @@ public class sampleController {
     @FXML
     private ToggleGroup mapType;
     @FXML
-    private ToggleGroup numPlayers1;
+    private RadioButton numPlayers1;
     @FXML
-    private ToggleGroup numPlayers2;
+    private RadioButton numPlayers2;
     @FXML
-    private ToggleGroup numPlayers3;
+    private RadioButton numPlayers3;
     @FXML
-    private ToggleGroup numPlayers4;
+    private RadioButton numPlayers4;
     @FXML
     private ToggleGroup Difficulty;
+    @FXML
+    private ToggleGroup numPlayers;
     private String race;
     private String map;
     private String difficultyLevel;
     private int numOfPlayers;
 
 
-    @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException {
+
+    public void handleButtonAction(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
         stage = (Stage) submit.getScene().getWindow();
