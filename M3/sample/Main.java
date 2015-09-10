@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
+    
+    private Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -18,7 +20,10 @@ public class Main extends Application {
         String css = this.getClass().getResource("controlStyle.css").toExternalForm();
     }
 
-
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+    
     public static void main(String[] args) {
         launch(args);
     }
