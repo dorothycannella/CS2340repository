@@ -7,20 +7,8 @@ import javafx.scene.Scene;
 
 import java.awt.*;
 
-scene.getStylesheets().add(this.getClass()
-.getResource(“controlStyle.css”).toExternalForm());
 
 public class sampleController {
-    @FXML
-    private RadioButton standardMap;
-    @FXML
-    private RadioButton randomMap;
-    @FXML
-    private RadioButton difficultyBeginner;
-    @FXML
-    private RadioButton difficultyStandard;
-    @FXML
-    private RadioButton difficultyTournament;
     @FXML
     private RadioButton raceHuman;
     @FXML
@@ -32,15 +20,7 @@ public class sampleController {
     @FXML
     private RadioButton raceBuzzite;
     @FXML
-    private Button submit;
-    @FXML
     private Button continueToPlay;
-    @FXML
-    private ToggleGroup mapType;
-    @FXML
-    private ToggleGroup numPlayers;
-    @FXML
-    private ToggleGroup Difficulty;
     @FXML
     private RadioButton blue;
     @FXML
@@ -61,18 +41,4 @@ public class sampleController {
     private RadioButton tyler;
     @FXML
     private RadioButton raymond;
-
-    private String race;
-    private String map;
-    private String difficultyLevel;
-    private int numOfPlayers;
-    
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        // Button was clicked, do something...
-        outputTextArea.appendText("Button Action\n");
-    }
-
-
-
 }
