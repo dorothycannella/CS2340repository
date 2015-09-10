@@ -14,8 +14,4 @@ repositories {
 }
 dependencies {
     compile files('lib/resources.jar')
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> dorothycannella/master

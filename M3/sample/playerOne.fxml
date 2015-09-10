@@ -24,7 +24,7 @@
       <RowConstraints maxHeight="74.83651733398438" minHeight="10.0" prefHeight="13.9075927734375" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Configeration" wrappingWidth="391.25643277168274">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Configuration" wrappingWidth="391.25643277168274">
          <font>
             <Font size="32.0" />
          </font>
@@ -53,7 +53,7 @@
             <Insets left="5.0" />
          </GridPane.margin>
       </Text>
-      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Continue &gt;&gt;" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4">
+      <Button fx:id="submit" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="94.0" text="Submit" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
