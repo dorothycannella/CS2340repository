@@ -42,7 +42,7 @@
     <RadioButton fx:id="numPlayers3" mnemonicParsing="false" text="3" textFill="#e771ff" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="4" />
     <RadioButton fx:id="numPlayers4" mnemonicParsing="false" text="4" textFill="#e771ff" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="5" />
     <Text fill="#e771ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-    <Button id=tConfig" fx:id="submit" mnemonicParsing="false" onAction="#handleButtonAction" text="SUBMIT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+    <Button id="tConfig" fx:id="submit" mnemonicParsing="false" onAction="#handleButtonAction" text="SUBMIT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <textFill>
             <LinearGradient endX="1.0" endY="0.5625" startY="0.23076923076923078">
                <stops>
