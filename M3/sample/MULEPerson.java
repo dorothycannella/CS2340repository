@@ -1,8 +1,5 @@
 package sample;
 
-/**
- * Created by Dorothy on 9/8/2015.
- */
 public class MULEPerson {
 
     private String race;
