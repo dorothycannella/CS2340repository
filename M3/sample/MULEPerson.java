@@ -28,23 +28,23 @@ public class MULEPerson {
         name = nam;
     }
 
-    public void setMoney(int mon){
+    public void setMoney(int mon) {
         money = mon;
     }
 
-    public void addMoney(int mon){
+    public void addMoney(int mon) {
         money += mon;
     }
 
-    public void reduceMoney(int mon){
+    public void reduceMoney(int mon) {
         money -= mon;
     }
 
-    public int getMoney(){
+    public int getMoney() {
         return money;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -52,7 +52,7 @@ public class MULEPerson {
         return race;
     }
 
-    public String getColor(){
+    public String getColor() {
         return color;
     }
 }
