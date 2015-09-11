@@ -25,9 +25,6 @@
          <font>
             <Font size="16.0" />
          </font>
-         <GridPane.margin>
-            <Insets bottom="10.0" />
-         </GridPane.margin>
       </Text>
       <Text fx:id="diff" fill="#cccc99" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <font>
