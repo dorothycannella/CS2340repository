@@ -1,6 +1,8 @@
 package sample;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -32,8 +34,15 @@ public class PlayerController {
     private String race;
     private String color;
     private String name;
+    private ArrayList<String> colorCodes;
 
     @FXML protected void initialize() {
+        colorCodes = new ArrayList<>(5);
+        colorCodes.add("Red");
+        colorCodes.add("Orange");
+        colorCodes.add("Blue");
+        colorCodes.add("Green");
+        colorCodes.add("Yellow");
         human.setOnAction(e -> {
             race = "Human";
         });
@@ -65,18 +74,26 @@ public class PlayerController {
             color = "Yellow";
         });
         submit.setOnAction(e -> {
-            name = typefield.getCharacters().toString();
-            typefield.clear();
-            ((RadioButton) races.getSelectedToggle()).fire();
-            ((RadioButton) colors.getSelectedToggle()).fire();
-            Game.setPlayer(new MULEPerson(race, color, name), player - 1);
-            if (player < Game.getPlayerNum()) {
-                prompt.setText("Player " + (++player) + " Configuration");
-            } else {
-                try {
-                    swapPane();
-                } catch (IOException ex) {
-                    System.err.println("File not found.");
+            if (races.getSelectedToggle() != null && colors.getSelectedToggle() != null
+                    && typefield.getLength() > 0) {
+                name = typefield.getCharacters().toString();
+                typefield.clear();
+                ((RadioButton) races.getSelectedToggle()).fire();
+                races.getSelectedToggle().setSelected(false);
+                ((RadioButton) colors.getSelectedToggle()).fire();
+                ((RadioButton) colors.getSelectedToggle()).setDisable(true);
+                colors.getSelectedToggle().setSelected(false);
+                colorCodes.remove(color);
+                Game.setPlayer(new MULEPerson(race, color, name), player - 1);
+                if (player < Game.getPlayerNum()) {
+                    prompt.setText("Player " + (++player) + " Configuration");
+                } else {
+                    try {
+                        Game.setComputers(colorCodes);
+                        swapPane();
+                    } catch (IOException ex) {
+                        System.err.println("File not found.");
+                    }
                 }
             }
         });

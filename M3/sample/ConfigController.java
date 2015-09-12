@@ -54,13 +54,16 @@ public class ConfigController {
             Game.setPlayerNum(4);
         });
         next.setOnAction(e -> {
-            ((RadioButton) difficulty.getSelectedToggle()).fire();
-            ((RadioButton) mapType.getSelectedToggle()).fire();
-            ((RadioButton) numPlayers.getSelectedToggle()).fire();
-            try {
-                swapPane();
-            } catch (IOException ex) {
-                System.err.println("File not found.");
+            if (difficulty.getSelectedToggle() != null && mapType.getSelectedToggle() != null
+                    && numPlayers.getSelectedToggle() != null) {
+                ((RadioButton) difficulty.getSelectedToggle()).fire();
+                ((RadioButton) mapType.getSelectedToggle()).fire();
+                ((RadioButton) numPlayers.getSelectedToggle()).fire();
+                try {
+                    swapPane();
+                } catch (IOException ex) {
+                    System.err.println("File not found.");
+                }
             }
         });
     }

@@ -1,7 +1,6 @@
 package sample;
 
 public class MULEPerson {
-
     private String race;
     private String color;
     private String name;
