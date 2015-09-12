@@ -22,18 +22,9 @@ public class ConfirmController {
     @FXML private Text nam;
 
     @FXML protected void initialize() {
-        String[] raceCodes = {"Human", "Flapper", "Bonzoid", "Buzzite",
-                              "Ugaite"};
-        String[] colorCodes = {"Red", "Orange", "Blue", "Green", "Yellow"};
         String[] difficultyCodes = {"Beginner Level", "Standard Level",
                                     "Tournament Level"};
         String[] mapCodes = {"Standard Map", "Random Map"};
-        Random rand = new Random();
-        for (int i = 4; i > Game.getPlayerNum(); i--) {
-            Game.setPlayer(new MULEPerson(raceCodes[rand.nextInt(5)],
-                    colorCodes[rand.nextInt(5)],
-                    "CPU" + (i - Game.getPlayerNum())), i - 1);
-        }
         MULEPerson[] players = Game.getPlayers();
         p1.setFill(Paint.valueOf(players[0].getColor()));
         p2.setFill(Paint.valueOf(players[1].getColor()));
