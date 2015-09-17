@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
@@ -30,7 +31,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="83.0" fitWidth="84.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <ImageView fx:id="town_tile" fitHeight="83.0" fitWidth="84.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <image>
                   <Image url="@Town%20picture.JPG" />
                </image>
@@ -55,14 +56,14 @@
                   <Image url="@blueRiver.JPG" />
                </image>
             </ImageView>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox fx:id="tile_0_0" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <ImageView fitHeight="62.0" fitWidth="83.0" pickOnBounds="true">
                      <image>
                         <Image url="@originalPlains.JPG" />
                      </image>
                   </ImageView>
-                  <Pane prefHeight="23.0" prefWidth="84.0" />
+                  <Label text="Player color" />
                </children>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
