@@ -5,27 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-
+import java.io.IOException;
 
 public class Main extends Application {
-    
-    private Stage primaryStage;
-
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("MULE Configuration");
-        primaryStage.setScene(new Scene(root, 515, 300));
-        primaryStage.show();
-        String css = this.getClass().getResource("controlStyle.css").toExternalForm();
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("config.fxml"));
+        stage.setTitle("MULE Configuration");
+        stage.setScene(new Scene(root, 960, 540));
+        stage.show();
     }
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
-    
 
     public static void main(String[] args) {
         launch(args);
