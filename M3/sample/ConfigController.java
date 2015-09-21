@@ -26,33 +26,15 @@ public class ConfigController {
     @FXML private Button next;
     
     @FXML protected void initialize() {
-        difficultyBeginner.setOnAction(e -> {
-            Game.setDifficulty(0);
-        });
-        difficultyStandard.setOnAction(e -> {
-            Game.setDifficulty(1);
-        });
-        difficultyTournament.setOnAction(e -> {
-            Game.setDifficulty(2);
-        });
-        standardMap.setOnAction(e -> {
-            Game.setMap(0);
-        });
-        randomMap.setOnAction(e -> {
-            Game.setMap(1);
-        });
-        numPlayers1.setOnAction(e -> {
-            Game.setPlayerNum(1);
-        });
-        numPlayers2.setOnAction(e -> {
-            Game.setPlayerNum(2);
-        });
-        numPlayers3.setOnAction(e -> {
-            Game.setPlayerNum(3);
-        });
-        numPlayers4.setOnAction(e -> {
-            Game.setPlayerNum(4);
-        });
+        difficultyBeginner.setOnAction(e -> Game.setDifficulty(0));
+        difficultyStandard.setOnAction(e -> Game.setDifficulty(1));
+        difficultyTournament.setOnAction(e -> Game.setDifficulty(2));
+        standardMap.setOnAction(e -> Game.setMapType(0));
+        randomMap.setOnAction(e -> Game.setMapType(1));
+        numPlayers1.setOnAction(e -> Game.setPlayerNum(1));
+        numPlayers2.setOnAction(e -> Game.setPlayerNum(2));
+        numPlayers3.setOnAction(e -> Game.setPlayerNum(3));
+        numPlayers4.setOnAction(e -> Game.setPlayerNum(4));
         next.setOnAction(e -> {
             if (difficulty.getSelectedToggle() != null && mapType.getSelectedToggle() != null
                     && numPlayers.getSelectedToggle() != null) {
@@ -60,18 +42,11 @@ public class ConfigController {
                 ((RadioButton) mapType.getSelectedToggle()).fire();
                 ((RadioButton) numPlayers.getSelectedToggle()).fire();
                 try {
-                    swapPane();
+                    Main.swapPane(getClass().getResource("player.fxml"));
                 } catch (IOException ex) {
-                    System.err.println("File not found.");
+                    System.err.println(ex);
                 }
             }
         });
-    }
-   
-    private void swapPane() throws IOException {
-        Stage stage = (Stage) next.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("player.fxml"));
-        stage.setScene(new Scene(root, 960, 540));
-        stage.show();
     }
 }

@@ -2,7 +2,115 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5c2203b-33e9-4618-82a1-0fdf8e142c01" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/GeorgiaTech.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/blueMountains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/bluePlains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/blueRiver.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/blueTown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/greenMountains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/greenPlains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/greenRiver.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/greenTown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/orangeMountains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/orangePlains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/orangeRiver.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/orangeTown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/redMountains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/redPlains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/redRiver.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/redTown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/townScreen.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/whiteMountains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/whitePlains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/whiteRiver.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/whiteTown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/yellowMountains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/yellowPlains.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/yellowRiver.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/assets/yellowTown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/MULE.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/MapController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/Tile.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/TownController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/mapStyle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/M3/sample/townStyle.css" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\libraries\M2_0_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\libraries\resources.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\CS2340repository" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\CS2340repository.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\GeorgiaTech.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\Town picture.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\blueMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\bluePlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\blueRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\greenMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\greenPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\greenRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\orangeMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\orangePlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\orangeRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\originalMap.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\originalMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\originalPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\redMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\redPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\redRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\yellowMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\yellowPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\M3\sample\yellowRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\ConfigController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\ConfirmController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\Game.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\GeorgiaTech.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\MULEPerson.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\Main.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\PlayerController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\Town picture.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\blueMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\bluePlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\blueRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\config.fxml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\confirm.fxml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\controlStyle.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\greenMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\greenPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\greenRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\orangeMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\orangePlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\orangeRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\originalMap.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\originalMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\originalPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\player.fxml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\redMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\redPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\redRiver.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\town.fxml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\yellowMountains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\yellowPlains.JPG" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Raymond Aaron Ortiz\IdeaProjects\CS2340repository\out\production\CS2340repository\sample\yellowRiver.JPG" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/ConfigController.java" afterPath="$PROJECT_DIR$/M3/sample/ConfigController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/ConfirmController.java" afterPath="$PROJECT_DIR$/M3/sample/ConfirmController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/Game.java" afterPath="$PROJECT_DIR$/M3/sample/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/MULEPerson.java" afterPath="$PROJECT_DIR$/M3/sample/MULEPerson.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/Main.java" afterPath="$PROJECT_DIR$/M3/sample/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/PlayerController.java" afterPath="$PROJECT_DIR$/M3/sample/PlayerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/config.fxml" afterPath="$PROJECT_DIR$/M3/sample/config.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/confirm.fxml" afterPath="$PROJECT_DIR$/M3/sample/confirm.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/controlStyle.css" afterPath="$PROJECT_DIR$/M3/sample/controlStyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/map.fxml" afterPath="$PROJECT_DIR$/M3/sample/map.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/player.fxml" afterPath="$PROJECT_DIR$/M3/sample/player.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M3/sample/town.fxml" afterPath="$PROJECT_DIR$/M3/sample/town.fxml" />
     </list>
     <ignored path="CS2340repository.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,34 +131,15 @@
     <favorites_list name="CS2340repository" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/M3/sample/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15922798">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="player.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -70,10 +159,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="866" />
-    <option name="y" value="30" />
-    <option name="width" value="2170" />
-    <option name="height" value="1598" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -98,6 +187,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -116,28 +207,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CS2340repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CS2340repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="M3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -338,32 +409,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="866" y="30" width="2170" height="1598" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24975467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2803838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -386,80 +458,59 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/M3/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M3/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M3/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M3/sample/player.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5506608">
           <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M3/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15922798">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding />
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

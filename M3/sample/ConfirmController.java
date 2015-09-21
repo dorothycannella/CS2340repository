@@ -1,8 +1,15 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.Random;
 
 public class ConfirmController {
@@ -20,33 +27,40 @@ public class ConfirmController {
     @FXML private Text race4;
     @FXML private Text diff;
     @FXML private Text nam;
+    @FXML private Button next;
 
     @FXML protected void initialize() {
         String[] difficultyCodes = {"Beginner Level", "Standard Level",
                                     "Tournament Level"};
         String[] mapCodes = {"Standard Map", "Random Map"};
-        MULEPerson[] players = Game.getPlayers();
-        p1.setFill(Paint.valueOf(players[0].getColor()));
-        p2.setFill(Paint.valueOf(players[1].getColor()));
-        p3.setFill(Paint.valueOf(players[2].getColor()));
-        p4.setFill(Paint.valueOf(players[3].getColor()));
-        name1.setText(players[0].getName());
-        name1.setFill(Paint.valueOf(players[0].getColor()));
-        name2.setText(players[1].getName());
-        name2.setFill(Paint.valueOf(players[1].getColor()));
-        name3.setText(players[2].getName());
-        name3.setFill(Paint.valueOf(players[2].getColor()));
-        name4.setText(players[3].getName());
-        name4.setFill(Paint.valueOf(players[3].getColor()));
-        race1.setText(players[0].getRace());
-        race1.setFill(Paint.valueOf(players[0].getColor()));
-        race2.setText(players[1].getRace());
-        race2.setFill(Paint.valueOf(players[1].getColor()));
-        race3.setText(players[2].getRace());
-        race3.setFill(Paint.valueOf(players[2].getColor()));
-        race4.setText(players[3].getRace());
-        race4.setFill(Paint.valueOf(players[3].getColor()));
+        p1.setFill(Paint.valueOf(Game.getColor(1)));
+        p2.setFill(Paint.valueOf(Game.getColor(2)));
+        p3.setFill(Paint.valueOf(Game.getColor(3)));
+        p4.setFill(Paint.valueOf(Game.getColor(4)));
+        name1.setText(Game.getName(1));
+        name1.setFill(Paint.valueOf(Game.getColor(1)));
+        name2.setText(Game.getName(2));
+        name2.setFill(Paint.valueOf(Game.getColor(2)));
+        name3.setText(Game.getName(3));
+        name3.setFill(Paint.valueOf(Game.getColor(3)));
+        name4.setText(Game.getName(4));
+        name4.setFill(Paint.valueOf(Game.getColor(4)));
+        race1.setText(Game.getRace(1));
+        race1.setFill(Paint.valueOf(Game.getColor(1)));
+        race2.setText(Game.getRace(2));
+        race2.setFill(Paint.valueOf(Game.getColor(2)));
+        race3.setText(Game.getRace(3));
+        race3.setFill(Paint.valueOf(Game.getColor(3)));
+        race4.setText(Game.getRace(4));
+        race4.setFill(Paint.valueOf(Game.getColor(4)));
         diff.setText(difficultyCodes[Game.getDifficulty()]);
-        nam.setText(mapCodes[Game.getMap()]);
+        nam.setText(mapCodes[Game.getMapType()]);
+        next.setOnAction(e -> {
+            try {
+                Main.swapPane(getClass().getResource("map.fxml"));
+            } catch (IOException ex) {
+                System.err.println(ex);
+            }
+        });
     }
 }

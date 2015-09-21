@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
@@ -41,7 +42,7 @@
     <RadioButton fx:id="numPlayers3" mnemonicParsing="false" text="3" textFill="#cccc99" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="4" />
     <RadioButton fx:id="numPlayers4" mnemonicParsing="false" text="4" textFill="#cccc99" toggleGroup="$numPlayers" GridPane.columnIndex="3" GridPane.rowIndex="5" />
     <Text fill="#cccc99" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-    <Button id="tConfig" fx:id="next" mnemonicParsing="false" text="NEXT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+    <Button id="tConfig" fx:id="next" mnemonicParsing="false" text="NEXT" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
       <textFill>
         <LinearGradient endX="1.0" endY="0.5625" startY="0.23076923076923078">
           <stops>
@@ -50,10 +51,13 @@
           </stops>
         </LinearGradient>
       </textFill>
+         <GridPane.margin>
+            <Insets bottom="20.0" right="20.0" />
+         </GridPane.margin>
     </Button>
     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
       <image>
-        <Image url="@GeorgiaTech.png" />
+        <Image url="@assets/GeorgiaTech.png" />
       </image>
     </ImageView>
   </children>
