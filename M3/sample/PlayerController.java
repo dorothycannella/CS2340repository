@@ -28,7 +28,7 @@ public class PlayerController {
     @FXML private RadioButton blue;
     @FXML private RadioButton green;
     @FXML private RadioButton yellow;
-    @FXML private Button submit;
+    @FXML private Button next;
     @FXML private Text prompt;
     private int player = 1;
     private String race;
@@ -43,37 +43,17 @@ public class PlayerController {
         colorCodes.add("Blue");
         colorCodes.add("Green");
         colorCodes.add("Yellow");
-        human.setOnAction(e -> {
-            race = "Human";
-        });
-        flapper.setOnAction(e -> {
-            race = "Flapper";
-        });
-        bonzoid.setOnAction(e -> {
-            race = "Bonzoid";
-        });
-        buzzite.setOnAction(e -> {
-            race = "Buzzite";
-        });
-        ugaite.setOnAction(e -> {
-            race = "Ugaite";
-        });
-        red.setOnAction(e -> {
-            color = "Red";
-        });
-        orange.setOnAction(e -> {
-            color = "Orange";
-        });
-        blue.setOnAction(e -> {
-            color = "Blue";
-        });
-        green.setOnAction(e -> {
-            color = "Green";
-        });
-        yellow.setOnAction(e -> {
-            color = "Yellow";
-        });
-        submit.setOnAction(e -> {
+        human.setOnAction(e -> race = "Human");
+        flapper.setOnAction(e -> race = "Flapper");
+        bonzoid.setOnAction(e -> race = "Bonzoid");
+        buzzite.setOnAction(e -> race = "Buzzite");
+        ugaite.setOnAction(e -> race = "Ugaite");
+        red.setOnAction(e -> color = "Red");
+        orange.setOnAction(e -> color = "Orange");
+        blue.setOnAction(e -> color = "Blue");
+        green.setOnAction(e -> color = "Green");
+        yellow.setOnAction(e -> color = "Yellow");
+        next.setOnAction(e -> {
             if (races.getSelectedToggle() != null && colors.getSelectedToggle() != null
                     && typefield.getLength() > 0) {
                 name = typefield.getCharacters().toString();
@@ -84,26 +64,19 @@ public class PlayerController {
                 ((RadioButton) colors.getSelectedToggle()).setDisable(true);
                 colors.getSelectedToggle().setSelected(false);
                 colorCodes.remove(color);
-                Game.setPlayer(new MULEPerson(race, color, name), player - 1);
+                Game.setPlayer(new MULEPerson(player, race, color, name), player - 1);
                 if (player < Game.getPlayerNum()) {
                     prompt.setText("Player " + (++player) + " Configuration");
                 } else {
                     try {
                         Game.setComputers(colorCodes);
-                        swapPane();
+                        Main.swapPane(getClass().getResource("confirm.fxml"));
                     } catch (IOException ex) {
-                        System.err.println("File not found.");
+                        System.err.println(ex);
                     }
                 }
             }
         });
-    }
-
-    private void swapPane() throws IOException {
-        Stage stage = (Stage) submit.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("confirm.fxml"));
-        stage.setScene(new Scene(root, 960, 540));
-        stage.show();
     }
 }
 
