@@ -1,7 +1,5 @@
 .root {
-	-fx-font-size: 16pt;
-	-fx-font-family: "Arial";
-	-fx-background-image: url("assets/background.png");
+	-fx-background-image: url("assets/townScreen.jpg");
 	-fx-background-repeat: stretch;
 	-fx-background-position: center center;
 }
