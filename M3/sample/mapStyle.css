@@ -1,9 +1,5 @@
 .root {
-	-fx-font-size: 16pt;
-	-fx-font-family: "Arial";
-	-fx-background-image: url("assets/background.png");
-	-fx-background-repeat: stretch;
-	-fx-background-position: center center;
+	-fx-background-color: black;
 }
 
 .button {
