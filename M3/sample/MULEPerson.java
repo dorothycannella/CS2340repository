@@ -27,7 +27,7 @@ public class MULEPerson implements Comparable<MULEPerson> {
         } else {
             money = 1000;
         }
-        food = Game.getDifficulty() == 0 ? 8 : 4;
+        food = Game.getDifficulty() == 1 ? 8 : 4;
         energy = food / 2;
         smithore = 0;
         mules = new ArrayList<>();
@@ -109,7 +109,8 @@ public class MULEPerson implements Comparable<MULEPerson> {
     }
 
     public int getScore() {
-        return money + (500 * tiles.size()) + (30 * food) + (25 * energy) + (50 * smithore) + (100 * crystite);
+        return money + (500 * tiles.size()) + (30 * food) + (25 * energy)
+                + (50 * smithore) + (100 * crystite);
     }
 
     public int compareTo(MULEPerson other) {

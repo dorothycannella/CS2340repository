@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
-
 <?import java.net.URL?>
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TownController">
    <children>
+      <ImageView fx:id="background" fitHeight="540.0" fitWidth="960.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/townScreen.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="store" layoutX="199.0" layoutY="490.0" mnemonicParsing="false" text="ENTER" />
       <Button fx:id="land" layoutX="338.0" layoutY="452.0" mnemonicParsing="false" text="ENTER" />
       <Button fx:id="pub" layoutX="561.0" layoutY="452.0" mnemonicParsing="false" text="ENTER" />
       <Button fx:id="assay" layoutX="718.0" layoutY="490.0" mnemonicParsing="false" text="ENTER" />
-      <Button fx:id="map" layoutX="461.0" layoutY="490.0" mnemonicParsing="false" text="EXIT" />
+      <Button fx:id="exit" layoutX="461.0" layoutY="490.0" mnemonicParsing="false" text="EXIT" />
+      <Button fx:id="gamble" layoutX="450.0" layoutY="409.0" mnemonicParsing="false" text="GAMBLE" visible="false" />
+      <Label fx:id="time" layoutX="862.0" layoutY="14.0" text="Time" visible="false">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
    <stylesheets>
       <URL value="@townStyle.css" />

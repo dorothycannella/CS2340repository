@@ -1,9 +1,6 @@
 package sample;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.PriorityQueue;
-import java.util.Random;
+import java.util.*;
 
 public class Game {
     private static int playerNum = 0;
@@ -12,57 +9,69 @@ public class Game {
     private static int round = 1;
     private static int selectionIndex = 0;
     private static int pass = 0;
+    private static int time = 5;
     private static boolean selectionPhase = true;
+    private static boolean timeActive = false;
     private static MULEPerson[] players = new MULEPerson[4];
-    private static MULEPerson[] selectionList = new MULEPerson[8];
     private static Tile[][] map = new Tile[5][9];
     private static PriorityQueue<MULEPerson> next = new PriorityQueue<>(4);
+    private static Timer timer = new Timer();
+    private static Random rand = new Random();
 
     public static void setPlayerNum(int p) {
-        playerNum = p;
+        if (playerNum == 0) {
+            playerNum = p;
+        }
     }
 
     public static void setDifficulty(int d) {
-        difficulty = d;
+        if (difficulty == 0) {
+            difficulty = d;
+        }
     }
 
     public static void setMapType(int m) {
-        mapType = m;
+        if (mapType == 0) {
+            mapType = m;
+        }
     }
 
     public static void setPlayer(MULEPerson p, int n) {
-        players[n] = p;
+        if (players[n] == null) {
+            players[n] = p;
+        }
     }
 
     public static void setComputers(ArrayList<String> colorCodes) {
-        String[] raceCodes = {"Human", "Flapper", "Bonzoid", "Buzzite",
-                "Ugaite"};
-        Random rand = new Random();
-        for (int i = 4; i > playerNum; i--) {
-            players[i - 1] = new MULEPerson(i, raceCodes[rand.nextInt(5)],
-                    colorCodes.get(rand.nextInt(colorCodes.size())),
-                    "CPU" + (i - playerNum));
-            colorCodes.remove(players[i - 1].getColor());
+        if (next.size() == 0) {
+            String[] raceCodes = {"Human", "Flapper", "Bonzoid", "Buzzite",
+                    "Ugaite"};
+            for (int i = 4; i > playerNum; i--) {
+                players[i - 1] = new MULEPerson(i, raceCodes[rand.nextInt(5)],
+                        colorCodes.get(rand.nextInt(colorCodes.size())),
+                        "CPU" + (i - playerNum));
+                colorCodes.remove(players[i - 1].getColor());
+            }
+            Collections.addAll(next, players);
         }
-        for (int i = 0; i < players.length; i++) {
-            selectionList[i] = players[i];
-            selectionList[i + 4] = players[3 - i];
-        }
-        Collections.addAll(next, players);
     }
 
     public static void makeMap() {
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[0].length; j++) {
-                map[i][j] = new Tile();
-                if (i == 2 && j == 0 || i == 0 && j == 6 || i == 1 && j == 8) {
-                    map[i][j].setMountains(3);
-                } else if (i - j == 2 || i == 3 && j == 6 || i == 4 && j == 8) {
-                    map[i][j].setMountains(2);
-                } else if (i + j == 2 || i == 2 && j == 8) {
-                    map[i][j].setMountains(1);
-                } else if (j == 4) {
-                    map[i][j].setRiver(true);
+        if (map[0][0] == null) {
+            for (int i = 0; i < map.length; i++) {
+                for (int j = 0; j < map[0].length; j++) {
+                    map[i][j] = new Tile();
+                    if (i == 2 && j == 0 || i == 0 && j == 6
+                            || i == 1 && j == 8) {
+                        map[i][j].setMountains(3);
+                    } else if (i - j == 2 || i == 3 && j == 6
+                            || i == 4 && j == 8) {
+                        map[i][j].setMountains(2);
+                    } else if (i + j == 2 || i == 2 && j == 8) {
+                        map[i][j].setMountains(1);
+                    } else if (j == 4) {
+                        map[i][j].setRiver(true);
+                    }
                 }
             }
         }
@@ -71,27 +80,25 @@ public class Game {
     public static boolean buyTile(int i, int j) {
         boolean ret = false;
         if (selectionPhase && map[i][j].getOwner() == 0 && (round <= 2
-                || selectionList[selectionIndex % 8].getMoney() >= 300)) {
-            MULEPerson cur = selectionList[selectionIndex % 8];
+                || players[selectionIndex].getMoney() >= 300)) {
+            MULEPerson cur = players[selectionIndex];
             map[i][j].setOwner(cur.getId());
             cur.addTile(map[i][j]);
             cur.addMoney(round > 2 ? -300 : 0);
             ret = true;
             nextTurn();
-        } else if (map[i][j].getOwner() == 0 && next.peek().getMoney() >= 300) {
-            map[i][j].setOwner(next.peek().getId());
-            next.peek().addTile(map[i][j]);
-            next.peek().addMoney(-300);
-            ret = true;
         }
         return ret;
     }
 
     private static void nextTurn() {
+        timeActive = false;
         next.poll();
-        selectionIndex++;
         if (next.size() == 0) {
             nextRound();
+        } else {
+            selectionIndex = round % 2 == 0 && selectionPhase ?
+                    selectionIndex - 1 : selectionIndex + 1;
         }
     }
 
@@ -108,6 +115,41 @@ public class Game {
         selectionPhase = false;
         round = 0;
         next.clear();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                time--;
+                if (time <= 0) {
+                    nextTurn();
+                }
+            }
+        }, 0, 1000);
+    }
+
+    public static void resetTurnTime() {
+        if (!timeActive) {
+            time = 5;
+            if (players[getNextTurn() - 1].getFood() >= 3 + (round - 1) / 4) {
+                time = 50;
+                players[getNextTurn() - 1].addFood(-3 - (round - 1) / 4);
+            } else if (players[getNextTurn() - 1].getFood() > 0) {
+                time = 30;
+                players[getNextTurn() - 1].addFood(
+                        players[getNextTurn() - 1].getFood() * -1);
+            }
+            timeActive = true;
+        }
+    }
+
+    public static void gamble() {
+        int roundBonus = (round / 4 + 1) * 50;
+        int timeBonus = ((time + 1) / 13 + 1) * 50;
+        int gambleBonus = roundBonus + rand.nextInt(timeBonus + 1);
+        if (gambleBonus > 250) {
+            gambleBonus = 250;
+        }
+        players[getNextTurn() - 1].addMoney(gambleBonus);
+        nextTurn();
     }
 
     public static int getPlayerNum() {
@@ -205,9 +247,13 @@ public class Game {
     public static int getNextTurn() {
         MULEPerson ret = next.peek();
         if (selectionPhase) {
-            ret = selectionList[selectionIndex % 8];
+            ret = players[selectionIndex];
         }
         return ret.getId();
+    }
+
+    public static int getTime() {
+        return time;
     }
 
     public static String getTileType(int i, int j) {

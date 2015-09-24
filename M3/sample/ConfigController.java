@@ -26,11 +26,11 @@ public class ConfigController {
     @FXML private Button next;
     
     @FXML protected void initialize() {
-        difficultyBeginner.setOnAction(e -> Game.setDifficulty(0));
-        difficultyStandard.setOnAction(e -> Game.setDifficulty(1));
-        difficultyTournament.setOnAction(e -> Game.setDifficulty(2));
-        standardMap.setOnAction(e -> Game.setMapType(0));
-        randomMap.setOnAction(e -> Game.setMapType(1));
+        difficultyBeginner.setOnAction(e -> Game.setDifficulty(1));
+        difficultyStandard.setOnAction(e -> Game.setDifficulty(2));
+        difficultyTournament.setOnAction(e -> Game.setDifficulty(3));
+        standardMap.setOnAction(e -> Game.setMapType(1));
+        randomMap.setOnAction(e -> Game.setMapType(2));
         numPlayers1.setOnAction(e -> Game.setPlayerNum(1));
         numPlayers2.setOnAction(e -> Game.setPlayerNum(2));
         numPlayers3.setOnAction(e -> Game.setPlayerNum(3));

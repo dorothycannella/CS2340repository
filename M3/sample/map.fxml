@@ -475,29 +475,39 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="phase" text="Phase" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+            <Label fx:id="phase" text="Phase" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets top="30.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="turn" text="Player's Turn" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label fx:id="round" text="Round" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+            <Label fx:id="turn" text="Player's Turn" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label fx:id="round" text="Round" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="30.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="type" text="Tile Type" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <Label fx:id="type" text="Tile Type" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets top="30.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="owner" text="Tile Owner" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Label fx:id="price" text="Price" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <Label fx:id="owner" text="Tile Owner" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label fx:id="price" text="Price" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="30.0" />
                </GridPane.margin>
             </Label>
             <Button fx:id="pass" mnemonicParsing="false" text="PASS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Label fx:id="timeLabel" text="Time Remaining:" textFill="WHITE" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="50.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="time" text="Time" textFill="WHITE" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
    </children>
