@@ -1,4 +1,4 @@
-package sample;
+package view;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -13,9 +13,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
+import controller.Game;
 
 import java.io.IOException;
-import java.util.TimerTask;
 
 public class MapController {
     @FXML private GridPane grid;

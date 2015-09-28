@@ -1,16 +1,12 @@
-package sample;
+package view;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import controller.Game;
 
 import java.io.IOException;
-import java.util.Random;
 
 public class ConfirmController {
     @FXML private Text p1;

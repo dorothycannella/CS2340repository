@@ -1,4 +1,7 @@
-package sample;
+package controller;
+
+import model.Player;
+import model.Map;
 
 import java.util.*;
 
@@ -12,9 +15,9 @@ public class Game {
     private static int time = 5;
     private static boolean selectionPhase = true;
     private static boolean timeActive = false;
-    private static MULEPerson[] players = new MULEPerson[4];
-    private static Tile[][] map = new Tile[5][9];
-    private static PriorityQueue<MULEPerson> next = new PriorityQueue<>(4);
+    private static Player[] players = new Player[4];
+    private static Map map = new Map();
+    private static PriorityQueue<Player> next = new PriorityQueue<>(4);
     private static Timer timer = new Timer();
     private static Random rand = new Random();
 
@@ -36,7 +39,7 @@ public class Game {
         }
     }
 
-    public static void setPlayer(MULEPerson p, int n) {
+    public static void setPlayer(Player p, int n) {
         if (players[n] == null) {
             players[n] = p;
         }
@@ -47,7 +50,7 @@ public class Game {
             String[] raceCodes = {"Human", "Flapper", "Bonzoid", "Buzzite",
                     "Ugaite"};
             for (int i = 4; i > playerNum; i--) {
-                players[i - 1] = new MULEPerson(i, raceCodes[rand.nextInt(5)],
+                players[i - 1] = new Player(i, raceCodes[rand.nextInt(5)],
                         colorCodes.get(rand.nextInt(colorCodes.size())),
                         "CPU" + (i - playerNum));
                 colorCodes.remove(players[i - 1].getColor());
@@ -56,34 +59,13 @@ public class Game {
         }
     }
 
-    public static void makeMap() {
-        if (map[0][0] == null) {
-            for (int i = 0; i < map.length; i++) {
-                for (int j = 0; j < map[0].length; j++) {
-                    map[i][j] = new Tile();
-                    if (i == 2 && j == 0 || i == 0 && j == 6
-                            || i == 1 && j == 8) {
-                        map[i][j].setMountains(3);
-                    } else if (i - j == 2 || i == 3 && j == 6
-                            || i == 4 && j == 8) {
-                        map[i][j].setMountains(2);
-                    } else if (i + j == 2 || i == 2 && j == 8) {
-                        map[i][j].setMountains(1);
-                    } else if (j == 4) {
-                        map[i][j].setRiver(true);
-                    }
-                }
-            }
-        }
-    }
-
     public static boolean buyTile(int i, int j) {
         boolean ret = false;
-        if (selectionPhase && map[i][j].getOwner() == 0 && (round <= 2
+        if (selectionPhase && map.getTile(i, j).getOwner() == 0 && (round <= 2
                 || players[selectionIndex].getMoney() >= 300)) {
-            MULEPerson cur = players[selectionIndex];
-            map[i][j].setOwner(cur.getId());
-            cur.addTile(map[i][j]);
+            Player cur = players[selectionIndex];
+            map.getTile(i, j).setOwner(cur.getId());
+            cur.addTile(map.getTile(i, j));
             cur.addMoney(round > 2 ? -300 : 0);
             ret = true;
             nextTurn();
@@ -245,7 +227,7 @@ public class Game {
     }
 
     public static int getNextTurn() {
-        MULEPerson ret = next.peek();
+        Player ret = next.peek();
         if (selectionPhase) {
             ret = players[selectionIndex];
         }
@@ -262,7 +244,7 @@ public class Game {
             ret = "Town";
         } else if (j == 4) {
             ret = "River";
-        } else if (map[i][j].getMountains() > 0) {
+        } else if (map.getTile(i, j).getMountains() > 0) {
             ret = "Mountains";
         } else {
             ret = "Plains";
@@ -271,11 +253,11 @@ public class Game {
     }
 
     public static int getOwner(int i, int j) {
-        return map[i][j].getOwner();
+        return map.getTile(i, j).getOwner();
     }
 
     public static int getNumMountains(int i, int j) {
-        return map[i][j].getMountains();
+        return map.getTile(i, j).getMountains();
     }
 
     public static void pass() {
