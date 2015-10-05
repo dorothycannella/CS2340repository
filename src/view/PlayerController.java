@@ -1,18 +1,16 @@
-package sample;
+package view;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.Parent;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import controller.Game;
+import model.Player;
 
 public class PlayerController {
     @FXML private TextField typefield;
@@ -64,7 +62,7 @@ public class PlayerController {
                 ((RadioButton) colors.getSelectedToggle()).setDisable(true);
                 colors.getSelectedToggle().setSelected(false);
                 colorCodes.remove(color);
-                Game.setPlayer(new MULEPerson(player, race, color, name), player - 1);
+                Game.setPlayer(new Player(player, race, color, name), player - 1);
                 if (player < Game.getPlayerNum()) {
                     prompt.setText("Player " + (++player) + " Configuration");
                 } else {

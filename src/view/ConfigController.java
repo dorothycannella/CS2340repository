@@ -1,14 +1,11 @@
-package sample;
+package view;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
+import controller.Game;
 
 public class ConfigController {
     @FXML private ToggleGroup difficulty;

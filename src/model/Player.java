@@ -1,8 +1,10 @@
-package sample;
+package model;
+
+import controller.Game;
 
 import java.util.ArrayList;
 
-public class MULEPerson implements Comparable<MULEPerson> {
+public class Player implements Comparable<Player> {
     private String race;
     private String color;
     private String name;
@@ -15,7 +17,7 @@ public class MULEPerson implements Comparable<MULEPerson> {
     private ArrayList<MULE> mules;
     private ArrayList<Tile> tiles;
 
-    public MULEPerson(int id, String race, String color, String name) {
+    public Player(int id, String race, String color, String name) {
         this.id = id;
         this.race = race;
         this.color = color;
@@ -113,7 +115,7 @@ public class MULEPerson implements Comparable<MULEPerson> {
                 + (50 * smithore) + (100 * crystite);
     }
 
-    public int compareTo(MULEPerson other) {
+    public int compareTo(Player other) {
         return this.getScore() - other.getScore();
     }
 }
