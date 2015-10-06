@@ -1,5 +1,6 @@
 package view;
 
+import controller.Game;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -9,11 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-import controller.Game;
 
 import java.io.IOException;
 
 public class TownController {
+    Timeline timer;
     @FXML private Button exit;
     @FXML private Button pub;
     @FXML private Button store;
@@ -22,7 +23,6 @@ public class TownController {
     @FXML private Button gamble;
     @FXML private Label time;
     @FXML private ImageView background;
-    Timeline timer;
 
     @FXML protected void initialize() {
         time.setText("0:" + String.format("%02d", Game.getTime()));
@@ -36,7 +36,7 @@ public class TownController {
                         try {
                             Main.swapPane(getClass().getResource("map.fxml"));
                         } catch (IOException ex) {
-                            System.err.println(ex);
+                            System.err.println("Missing Asset: map.fxml");
                         }
                     }
                 }));
@@ -46,7 +46,7 @@ public class TownController {
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex) {
-                System.err.println(ex);
+                System.err.println("Missing Asset: map.fxml");
             }
         });
         pub.setOnAction(e1 -> {
@@ -65,7 +65,7 @@ public class TownController {
                     try {
                         Main.swapPane(getClass().getResource("map.fxml"));
                     } catch (IOException ex) {
-                        System.err.println(ex);
+                        System.err.println("Missing Asset: map.fxml");
                     }
                 });
                 background.setImage(new Image(getClass().getResource("assets/t"
@@ -75,11 +75,11 @@ public class TownController {
                     + "reen.jpg").toExternalForm()));
         });
         gamble.setOnAction(e -> {
-            Game.gamble();
+            Game.pub();
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex) {
-                System.err.println(ex);
+                System.err.println("Missing Asset: map.fxml");
             }
         });
     }

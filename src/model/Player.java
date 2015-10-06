@@ -14,7 +14,7 @@ public class Player implements Comparable<Player> {
     private int energy;
     private int smithore;
     private int crystite;
-    private ArrayList<MULE> mules;
+    private ArrayList<Mule> mules;
     private ArrayList<Tile> tiles;
 
     public Player(int id, String race, String color, String name) {
@@ -22,12 +22,11 @@ public class Player implements Comparable<Player> {
         this.race = race;
         this.color = color;
         this.name = name;
+        money = 1000;
         if (race.equals("Flapper")) {
             money = 1600;
         } else if (race.equals("Human")) {
             money = 600;
-        } else {
-            money = 1000;
         }
         food = Game.getDifficulty() == 1 ? 8 : 4;
         energy = food / 2;
@@ -56,7 +55,7 @@ public class Player implements Comparable<Player> {
         this.crystite += crystite;
     }
 
-    public void addMule(MULE mule) {
+    public void addMule(Mule mule) {
         mules.add(mule);
     }
 
@@ -100,9 +99,9 @@ public class Player implements Comparable<Player> {
         return crystite;
     }
 
-    public MULE getMule(int type) {
-        MULE ret = null;
-        for (MULE m: mules) {
+    public Mule getMule(int type) {
+        Mule ret = null;
+        for (Mule m : mules) {
             if (m.getType() == type) {
                 ret = m;
             }

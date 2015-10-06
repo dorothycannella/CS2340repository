@@ -26,4 +26,26 @@ public class Map {
     public Tile getTile(int i, int j) {
         return map[i][j];
     }
+
+    public String getTileType(int i, int j) {
+        String ret;
+        if (i == 2 && j == 4) {
+            ret = "Town";
+        } else if (j == 4) {
+            ret = "River";
+        } else if (map[i][j].getMountains() > 0) {
+            ret = "Mountains";
+        } else {
+            ret = "Plains";
+        }
+        return ret;
+    }
+
+    public int getOwner(int i, int j) {
+        return map[i][j].getOwner();
+    }
+
+    public int getMountains(int i, int j) {
+        return map[i][j].getMountains();
+    }
 }
