@@ -1,16 +1,16 @@
 package view;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
+import controller.Game;
 import javafx.fxml.FXML;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import controller.Game;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Text;
 import model.Player;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class PlayerController {
     @FXML private TextField typefield;
@@ -52,7 +52,8 @@ public class PlayerController {
         green.setOnAction(e -> color = "Green");
         yellow.setOnAction(e -> color = "Yellow");
         next.setOnAction(e -> {
-            if (races.getSelectedToggle() != null && colors.getSelectedToggle() != null
+            if (races.getSelectedToggle() != null
+                    && colors.getSelectedToggle() != null
                     && typefield.getLength() > 0) {
                 name = typefield.getCharacters().toString();
                 typefield.clear();
@@ -70,7 +71,7 @@ public class PlayerController {
                         Game.setComputers(colorCodes);
                         Main.swapPane(getClass().getResource("confirm.fxml"));
                     } catch (IOException ex) {
-                        System.err.println(ex);
+                        System.err.println("Missing Asset: confirm.fxml");
                     }
                 }
             }

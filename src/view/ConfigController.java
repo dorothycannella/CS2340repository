@@ -1,11 +1,12 @@
 package view;
 
-import java.io.IOException;
+import controller.Game;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import controller.Game;
+
+import java.io.IOException;
 
 public class ConfigController {
     @FXML private ToggleGroup difficulty;
@@ -41,7 +42,7 @@ public class ConfigController {
                 try {
                     Main.swapPane(getClass().getResource("player.fxml"));
                 } catch (IOException ex) {
-                    System.err.println(ex);
+                    System.err.println("Missing Asset: player.fxml");
                 }
             }
         });

@@ -1,10 +1,10 @@
 package view;
 
+import controller.Game;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
-import controller.Game;
 
 import java.io.IOException;
 
@@ -55,7 +55,7 @@ public class ConfirmController {
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex) {
-                System.err.println(ex);
+                System.err.println("Missing Asset: map.fxml");
             }
         });
     }

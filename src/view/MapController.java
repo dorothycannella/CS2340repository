@@ -1,5 +1,6 @@
 package view;
 
+import controller.Game;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -13,11 +14,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
-import controller.Game;
 
 import java.io.IOException;
 
 public class MapController {
+    Timeline timer;
     @FXML private GridPane grid;
     @FXML private GridPane panel;
     @FXML private Label phase;
@@ -29,11 +30,9 @@ public class MapController {
     @FXML private Label timeLabel;
     @FXML private Label time;
     @FXML private Button pass;
-    Timeline timer;
 
     @FXML protected void initialize() {
         if (!Game.getPhase()) {
-            Game.resetTurnTime();
             pass.setDisable(true);
             pass.setVisible(false);
             timeLabel.setVisible(true);
@@ -122,8 +121,10 @@ public class MapController {
                     || GridPane.getColumnIndex(n) != 4) {
                 n.setOnMouseClicked(e -> {
                     int buyer = Game.getNextTurn();
-                    boolean feedback = Game.buyTile(GridPane.getRowIndex(n),
+                    Game.buyTile(GridPane.getRowIndex(n),
                             GridPane.getColumnIndex(n));
+                    boolean feedback = Game.confirmPurchase(GridPane.getRowIndex(n),
+                            GridPane.getColumnIndex(n), buyer);
                     if (feedback) {
                         owner.setText("Owner: " + Game.getName(buyer));
                         owner.setTextFill(Paint.valueOf(Game.getColor(buyer)));
@@ -140,7 +141,7 @@ public class MapController {
                         try {
                             Main.swapPane(getClass().getResource("town.fxml"));
                         } catch (IOException ex) {
-                            System.err.println(ex);
+                            System.err.println("Missing Asset: town.fxml");
                         }
                     } else {
                         price.setText("Wait for the Main Phase!");
