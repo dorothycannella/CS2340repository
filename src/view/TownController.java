@@ -21,6 +21,8 @@ public class TownController {
     @FXML private Button land;
     @FXML private Button assay;
     @FXML private Button gamble;
+    @FXML private Button buy;
+    @FXML private Button sell;
     @FXML private Label time;
     @FXML private ImageView background;
 
@@ -81,6 +83,33 @@ public class TownController {
             } catch (IOException ex) {
                 System.err.println("Missing Asset: map.fxml");
             }
+        });
+        store.setOnAction(e -> {
+            pub.setVisible(false);
+            store.setVisible(false);
+            land.setVisible(false);
+            assay.setVisible(false);
+            buy.setVisible(true);
+            sell.setVisible(true);
+            exit.setOnAction(e2 -> {
+                pub.setVisible(true);
+                store.setVisible(true);
+                land.setVisible(true);
+                assay.setVisible(true);
+                buy.setVisible(false);
+                sell.setVisible(false);
+                exit.setOnAction(e3 -> {
+                    try {
+                        Main.swapPane(getClass().getResource("map.fxml"));
+                    } catch (IOException ex) {
+                        System.err.println("Missing Asset: map.fxml");
+                    }
+                });
+                background.setImage(new Image(getClass().getResource("assets/t"
+                        + "ownScreen.jpg").toExternalForm()));
+            });
+            background.setImage(new Image(getClass().getResource("assets/storeSc"
+                    + "reen.jpg").toExternalForm()));
         });
     }
 }
