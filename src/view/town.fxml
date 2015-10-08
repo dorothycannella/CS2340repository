@@ -10,6 +10,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TownController">
    <children>
+      <ImageView fx:id="background1" fitHeight="540.0" fitWidth="960.0" layoutX="1.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/storeImageNew.JPG" />
+         </image>
+      </ImageView>
       <ImageView fx:id="background" fitHeight="540.0" fitWidth="960.0" pickOnBounds="true">
          <image>
             <Image url="@assets/townScreen.jpg" />
@@ -21,13 +26,96 @@
       <Button fx:id="assay" layoutX="718.0" layoutY="490.0" mnemonicParsing="false" text="ENTER" />
       <Button fx:id="exit" layoutX="461.0" layoutY="490.0" mnemonicParsing="false" text="EXIT" />
       <Button fx:id="gamble" layoutX="450.0" layoutY="409.0" mnemonicParsing="false" text="GAMBLE" visible="false" />
-      <Button fx:id="buy" layoutX="330.0" layoutY="383.0" mnemonicParsing="false" text="BUY" visible="false"/>
-      <Button fx:id="sell" layoutX="636.0" layoutY="383.0" mnemonicParsing="false" text="SELL" visible="false"/>
+      <Button fx:id="buy" layoutX="330.0" layoutY="383.0" mnemonicParsing="false" text="BUY" visible="false" />
+      <Button fx:id="sell" layoutX="630.0" layoutY="383.0" mnemonicParsing="false" text="SELL" visible="false" />
       <Label fx:id="time" layoutX="862.0" layoutY="14.0" text="Time" visible="false">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
+      <GridPane fx:id="storeGrid" alignment="CENTER_RIGHT" layoutX="161.0" layoutY="102.0" prefHeight="223.0" prefWidth="623.0" visible="false">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="9.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="241.0" minWidth="0.0" prefWidth="114.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="121.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="125.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="119.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="150.0" text=" Food MULE  $125" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="buyFood" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellFood" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="buyEnergy" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellEnergy" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="159.0" layoutY="55.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="buySmithore" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellSmithore" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="308.0" layoutY="55.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="buyCrystite" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellCrystite" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="150.0" text="Smithore  $50" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="150.0" text="Energy MULE $150" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="150.0" text="Crystite  $100" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="150.0" text=" Food  $30" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="150.0" text="Energy  $25" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="10.0" prefHeight="47.0" prefWidth="150.0" text="Smithore MULE $175" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="456.0" layoutY="10.0" prefHeight="47.0" prefWidth="150.0" text="Crystite MULE $200" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="42.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="buyFoodMule" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellFood1" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="159.0" layoutY="42.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="buyEnergyMule" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellFood22" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="308.0" layoutY="42.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="buySmithoreMule" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellFood212" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="456.0" layoutY="42.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="buyCrystiteMule" alignment="CENTER" mnemonicParsing="false" text="BUY" />
+                  <Button fx:id="sellFood2111" alignment="CENTER" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" text="SELL" />
+               </children>
+            </HBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="10.0" prefHeight="47.0" prefWidth="150.0" text="Quantities" textAlignment="CENTER" textOverrun="CLIP" GridPane.rowIndex="1" />
+            <Label fx:id="qFood" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="42.0" prefHeight="47.0" prefWidth="150.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="qEnergy" alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="42.0" prefHeight="47.0" prefWidth="150.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="qSmithore" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="42.0" prefHeight="47.0" prefWidth="150.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label fx:id="qCrystite" alignment="CENTER" contentDisplay="CENTER" layoutX="370.0" layoutY="42.0" prefHeight="47.0" prefWidth="150.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="42.0" prefHeight="47.0" prefWidth="150.0" text="# Mules Available" textAlignment="CENTER" textOverrun="CLIP" GridPane.rowIndex="4" />
+            <Label fx:id="qMule" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="138.0" prefHeight="47.0" prefWidth="150.0" text="25" textAlignment="CENTER" textOverrun="CLIP" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
    </children>
    <stylesheets>
       <URL value="@townStyle.css" />

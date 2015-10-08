@@ -9,20 +9,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
 import java.io.IOException;
 
 public class TownController {
     Timeline timer;
+    @FXML private GridPane storeGrid;
     @FXML private Button exit;
     @FXML private Button pub;
     @FXML private Button store;
     @FXML private Button land;
     @FXML private Button assay;
     @FXML private Button gamble;
-    @FXML private Button buy;
-    @FXML private Button sell;
     @FXML private Label time;
     @FXML private ImageView background;
 
@@ -89,15 +89,13 @@ public class TownController {
             store.setVisible(false);
             land.setVisible(false);
             assay.setVisible(false);
-            buy.setVisible(true);
-            sell.setVisible(true);
+            storeGrid.setVisible(true);
             exit.setOnAction(e2 -> {
                 pub.setVisible(true);
                 store.setVisible(true);
                 land.setVisible(true);
                 assay.setVisible(true);
-                buy.setVisible(false);
-                sell.setVisible(false);
+                storeGrid.setVisible(false);
                 exit.setOnAction(e3 -> {
                     try {
                         Main.swapPane(getClass().getResource("map.fxml"));
@@ -108,8 +106,8 @@ public class TownController {
                 background.setImage(new Image(getClass().getResource("assets/t"
                         + "ownScreen.jpg").toExternalForm()));
             });
-            background.setImage(new Image(getClass().getResource("assets/storeSc"
-                    + "reen.jpg").toExternalForm()));
+            background.setImage(new Image(getClass().getResource("assets/storeImage"
+                    + "new.jpg").toExternalForm()));
         });
     }
 }
