@@ -23,6 +23,10 @@ public class Map {
         }
     }
 
+    public void placeMule(int i, int j, Mule mule) {
+        map[i][j].placeMule(mule);
+    }
+
     public Tile getTile(int i, int j) {
         return map[i][j];
     }
@@ -47,5 +51,9 @@ public class Map {
 
     public int getMountains(int i, int j) {
         return map[i][j].getMountains();
+    }
+
+    public boolean hasMule(int i, int j) {
+        return map[i][j].hasMule();
     }
 }

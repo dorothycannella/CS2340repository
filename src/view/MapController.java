@@ -33,6 +33,7 @@ public class MapController {
 
     @FXML protected void initialize() {
         if (!Game.getPhase()) {
+            Game.resetTurnTime();
             pass.setDisable(true);
             pass.setVisible(false);
             timeLabel.setVisible(true);
@@ -50,49 +51,66 @@ public class MapController {
             timer.setCycleCount(Animation.INDEFINITE);
             timer.play();
         }
-        ObservableList<Node> info = panel.getChildren();
-        ObservableList<Node> tiles = grid.getChildren();
         phase.setText(Game.getPhase() ? "Selection Phase" : "Main Phase");
-        turn.setText(Game.getName(Game.getNextTurn()) + "'s Turn");
-        turn.setTextFill(Paint.valueOf(Game.getColor(Game.getNextTurn())));
+        turn.setText(Game.getData(2, Game.getNextTurn()) + "'s Turn");
+        turn.setTextFill(Paint.valueOf(Game.getData(1, Game.getNextTurn())));
         round.setText("Round: " + Game.getRound());
         pass.setOnAction(e -> {
             Game.pass();
             initialize();
         });
+        refreshPanel();
+        refreshMap();
+    }
+
+    private void refreshPanel() {
+        ObservableList<Node> info = panel.getChildren();
         for (Node n: info) {
             int i = GridPane.getRowIndex(n);
             int j = GridPane.getColumnIndex(n);
-            ((Label) n).setTextFill(Paint.valueOf(Game.getColor((j / 3) + 1)));
+            ((Label) n).setTextFill(Paint.valueOf(
+                    Game.getData(1, (j / 3) + 1)));
             if (i == 1 && j % 3 == 0) {
-                ((Label) n).setText(Game.getName((j / 3) + 1));
+                ((Label) n).setText(Game.getData(2, (j / 3) + 1));
             } else if (i == 2 && j % 3 == 0) {
-                ((Label) n).setText(Game.getRace((j / 3) + 1));
+                ((Label) n).setText(Game.getData(0, (j / 3) + 1));
             } else if (i == 0 && j % 3 == 1) {
-                ((Label) n).setText("Money: " + Game.getMoney((j / 3) + 1));
+                ((Label) n).setText("Money: "
+                        + Game.getResources(0, (j / 3) + 1));
             } else if (i == 1 && j % 3 == 1) {
-                ((Label) n).setText("Food: " + Game.getFood((j / 3) + 1));
+                ((Label) n).setText("Food: "
+                        + Game.getResources(1, (j / 3) + 1));
             } else if (i == 2 && j % 3 == 1) {
-                ((Label) n).setText("Energy: " + Game.getEnergy((j / 3) + 1));
+                ((Label) n).setText("Energy: "
+                        + Game.getResources(2, (j / 3) + 1));
             } else if (i == 0 && j % 3 == 2) {
                 ((Label) n).setText("Smithore: "
-                        + Game.getSmithore((j / 3) + 1));
+                        + Game.getResources(3, (j / 3) + 1));
             } else if (i == 1 && j % 3 == 2) {
                 ((Label) n).setText("Crystite: "
-                        + Game.getCrystite((j / 3) + 1));
+                        + Game.getResources(4, (j / 3) + 1));
             } else if (i == 2 && j % 3 == 2) {
                 ((Label) n).setText("Score: " + Game.getScore((j / 3) + 1));
             }
         }
+    }
+
+    private void refreshMap() {
+        ObservableList<Node> tiles = grid.getChildren();
         for (Node n: tiles) {
             int i = GridPane.getRowIndex(n);
             int j = GridPane.getColumnIndex(n);
             Image cursor = new Image(getClass().getResource("assets/"
-                    + Game.getColor(Game.getNextTurn()).toLowerCase()
-                    + Game.getTileType(i, j) + ".jpg").toExternalForm());
+                    + Game.getData(1, Game.getNextTurn()).toLowerCase()
+                    + Game.getTileType(i, j)
+                    + (Game.getMule(Game.getNextTurn())
+                    && (i != 2 || j != 4) ? "Mule" : "")
+                    + ".jpg").toExternalForm());
             Image img = new Image(getClass().getResource("assets/"
-                    + Game.getColor(Game.getOwner(i, j)).toLowerCase()
-                    + Game.getTileType(i, j) + ".jpg").toExternalForm());
+                    + Game.getData(1, Game.getOwner(i, j)).toLowerCase()
+                    + Game.getTileType(i, j)
+                    + (Game.hasMule(i, j) ? "Mule" : "")
+                    + ".jpg").toExternalForm());
             ((ImageView) n).setImage(img);
             n.setOnMouseEntered(e -> {
                 ((ImageView) n).setImage(cursor);
@@ -102,10 +120,10 @@ public class MapController {
                 if (i == 2 && j == 4) {
                     owner.setText("Click to enter!");
                 } else {
-                    owner.setText("Owner: " + Game.getName(
+                    owner.setText("Owner: " + Game.getData(2,
                             Game.getOwner(i, j)));
                 }
-                owner.setTextFill(Paint.valueOf(Game.getColor(
+                owner.setTextFill(Paint.valueOf(Game.getData(1,
                         Game.getOwner(i, j))));
                 if (i == 2 && j == 4 || Game.getOwner(i, j) > 0) {
                     price.setText("Not for sale!");
@@ -117,19 +135,30 @@ public class MapController {
                 }
             });
             n.setOnMouseExited(e -> ((ImageView) n).setImage(img));
-            if (GridPane.getRowIndex(n) != 2
-                    || GridPane.getColumnIndex(n) != 4) {
+            if (Game.getPhase() && (i != 2 || j != 4)) {
                 n.setOnMouseClicked(e -> {
                     int buyer = Game.getNextTurn();
-                    Game.buyTile(GridPane.getRowIndex(n),
-                            GridPane.getColumnIndex(n));
-                    boolean feedback = Game.confirmPurchase(GridPane.getRowIndex(n),
-                            GridPane.getColumnIndex(n), buyer);
+                    Game.buyTile(i, j);
+                    boolean feedback = Game.confirmPurchase(i, j, buyer);
                     if (feedback) {
-                        owner.setText("Owner: " + Game.getName(buyer));
-                        owner.setTextFill(Paint.valueOf(Game.getColor(buyer)));
+                        owner.setText("Owner: " + Game.getData(2, buyer));
+                        owner.setTextFill(Paint.valueOf(Game.getData(1, buyer)));
                         price.setText("Not for sale!");
                         initialize();
+                    }
+                });
+            } else if (i != 2 || j != 4) {
+                int buyer = Game.getNextTurn();
+                n.setOnMouseClicked(e -> {
+                    if (Game.getMule(buyer)
+                            && Game.getOwner(i, j) == buyer
+                            && !Game.hasMule(i, j)) {
+                        Game.placeMule(i, j);
+                        refreshMap();
+                    } else if (Game.getMule(buyer)) {
+                        price.setText("You have lost your MULE!");
+                        Game.removeMule();
+                        refreshMap();
                     } else {
                         price.setText("You can't do that right now!");
                     }

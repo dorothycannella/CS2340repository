@@ -63,7 +63,8 @@ public class PlayerController {
                 ((RadioButton) colors.getSelectedToggle()).setDisable(true);
                 colors.getSelectedToggle().setSelected(false);
                 colorCodes.remove(color);
-                Game.setPlayer(new Player(player, race, color, name), player - 1);
+                Game.setPlayer(new Player(Game.getDifficulty(), player, race,
+                        color, name), player - 1);
                 if (player < Game.getPlayerNum()) {
                     prompt.setText("Player " + (++player) + " Configuration");
                 } else {

@@ -11,4 +11,3 @@ public class Mule {
         return type;
     }
 }
-
