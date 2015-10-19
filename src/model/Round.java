@@ -6,6 +6,7 @@ public class Round {
     private int round;
     private int pass;
     private int time;
+    private boolean timeActive;
     private Timer timer;
     private Random rand;
     private PriorityQueue<Player> next;
@@ -23,6 +24,7 @@ public class Round {
     public void stopTimer() {
         timer.cancel();
         timer.purge();
+        timeActive = false;
     }
 
     public void addPlayers(Player[] players) {
@@ -42,6 +44,7 @@ public class Round {
     }
 
     private void nextTurn() {
+        timeActive = false;
         next.poll();
         if (next.size() == 0) {
             nextRound();
@@ -65,18 +68,23 @@ public class Round {
         Collections.addAll(next, players);
         pass = 0;
         round++;
+        for (Player player: players) {
+            player.calculateProduction();
+        }
     }
 
     public void resetTurnTime() {
         Player current = next.peek();
-        time = 5;
-        if (current.getResources(1) >= 3 + (round - 1) / 4) {
+        if (!timeActive && current.getResources(1) >= 3 + (round - 1) / 4) {
             time = 50;
             current.addResources(1, -3 - (round - 1) / 4);
-        } else if (current.getResources(1) > 0) {
+        } else if (!timeActive && current.getResources(1) > 0) {
             time = 30;
             current.addResources(1, current.getResources(1) * -1);
+        } else if (!timeActive) {
+            time = 5;
         }
+        timeActive = true;
     }
 
     public void pass() {

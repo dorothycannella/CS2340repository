@@ -3,13 +3,15 @@ package model;
 public class Tile {
     private int owner;
     private int mountains;
-    private boolean river;
     private Mule mule;
+    private int[] production = {2, 3, 1, 0};
 
-    public Tile() {
-        this.owner = 0;
-        this.mountains = 0;
-        this.river = false;
+    public int[] calculateProduction() {
+        int[] ret = {0, 0, 0, 0};
+        if (mule != null) {
+            ret[mule.getType()] = production[mule.getType()];
+        }
+        return ret;
     }
 
     public void setOwner(int owner) {
@@ -18,10 +20,15 @@ public class Tile {
 
     public void setMountains(int mountains) {
         this.mountains = mountains;
+        production[0] -= 1;
+        production[1] -= 2;
+        production[2] += mountains;
     }
 
-    public void setRiver(boolean river) {
-        this.river = river;
+    public void setRiver() {
+        production[0] += 2;
+        production[1] -= 1;
+        production[2] -= 1;
     }
 
     public void placeMule(Mule mule) {
