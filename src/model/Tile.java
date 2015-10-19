@@ -4,6 +4,7 @@ public class Tile {
     private int owner;
     private int mountains;
     private boolean river;
+    private Mule mule;
 
     public Tile() {
         this.owner = 0;
@@ -23,6 +24,10 @@ public class Tile {
         this.river = river;
     }
 
+    public void placeMule(Mule mule) {
+        this.mule = mule;
+    }
+
     public int getOwner() {
         return owner;
     }
@@ -31,7 +36,7 @@ public class Tile {
         return mountains;
     }
 
-    public boolean getRiver() {
-        return river;
+    public boolean hasMule() {
+        return mule != null;
     }
 }

@@ -33,19 +33,16 @@ public class Round {
     public void buyTile(Tile tile) {
         Player buyer = next.peek();
         if (next.comparator() != null && tile.getOwner() == 0 && (round <= 2
-                || buyer.getMoney() >= 300)) {
+                || buyer.getResources(0) >= 300)) {
             tile.setOwner(buyer.getId());
             buyer.addTile(tile);
-            buyer.addMoney(round > 2 ? -300 : 0);
+            buyer.addResources(0, round > 2 ? -300 : 0);
             nextTurn();
         }
     }
 
     private void nextTurn() {
         next.poll();
-        if (next.comparator() == null) {
-            resetTurnTime();
-        }
         if (next.size() == 0) {
             nextRound();
         }
@@ -70,15 +67,15 @@ public class Round {
         round++;
     }
 
-    private void resetTurnTime() {
+    public void resetTurnTime() {
         Player current = next.peek();
         time = 5;
-        if (current.getFood() >= 3 + (round - 1) / 4) {
+        if (current.getResources(1) >= 3 + (round - 1) / 4) {
             time = 50;
-            current.addFood(-3 - (round - 1) / 4);
-        } else if (current.getFood() > 0) {
+            current.addResources(1, -3 - (round - 1) / 4);
+        } else if (current.getResources(1) > 0) {
             time = 30;
-            current.addFood(current.getFood() * -1);
+            current.addResources(1, current.getResources(1) * -1);
         }
     }
 
@@ -95,7 +92,7 @@ public class Round {
         if (gambleBonus > 250) {
             gambleBonus = 250;
         }
-        current.addMoney(gambleBonus);
+        current.addResources(0, gambleBonus);
         nextTurn();
     }
 
