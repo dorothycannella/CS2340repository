@@ -17,7 +17,7 @@ public class Map {
                 } else if (i + j == 2 || i == 2 && j == 8) {
                     map[i][j].setMountains(1);
                 } else if (j == 4) {
-                    map[i][j].setRiver(true);
+                    map[i][j].setRiver();
                 }
             }
         }

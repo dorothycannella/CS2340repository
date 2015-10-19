@@ -27,6 +27,18 @@ public class Player implements Comparable<Player> {
         tiles = new ArrayList<>();
     }
 
+    public void calculateProduction() {
+        for (Tile tile: tiles) {
+            int[] income = tile.calculateProduction();
+            for (int i = 0; i < income.length; i++) {
+                if (income[i] > 0 && resources[2] > 0) {
+                    resources[i + 1] += income[i];
+                    resources[2]--;
+                }
+            }
+        }
+    }
+
     public void addResources(int type, int quantity) {
         resources[type] += quantity;
     }

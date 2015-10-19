@@ -137,8 +137,8 @@ public class TownController {
                 background.setImage(new Image(getClass().getResource("assets/t"
                         + "ownScreen.jpg").toExternalForm()));
             });
-            background.setImage(new Image(getClass().getResource("assets/storeImage"
-                    + "new.jpg").toExternalForm()));
+            background.setImage(new Image(getClass().getResource("assets/store"
+                    + "Screen.jpg").toExternalForm()));
         });
         buyFood.setOnAction(e -> order = 0);
         buyEnergy.setOnAction(e -> order = 1);
