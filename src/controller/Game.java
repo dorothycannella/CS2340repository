@@ -5,30 +5,40 @@ import model.Player;
 import model.Round;
 import model.Store;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Game {
-    private static int playerNum = 0;
-    private static int difficulty = 0;
-    private static int mapType = 0;
-    private static Random rand = new Random();
-    private static Map map = new Map();
-    private static Round round = new Round();
-    private static Store store;
-    private static Player[] players = new Player[4];
+    private int difficulty;
+    private int mapType;
+    private int playerNum;
+    private Random rand;
+    private Map map;
+    private Round round;
+    private Store store;
+    private Player[] players;
 
-    public static void stopTimer() {
+    public Game(int d, int m, int n) {
+        difficulty = d;
+        mapType = m;
+        playerNum = n;
+        rand = new Random();
+        map = new Map();
+        round = new Round();
+        players = new Player[4];
+    }
+
+    public void stopTimer() {
         round.stopTimer();
     }
 
-    public static void setPlayer(Player p, int n) {
-        if (players[n] == null) {
-            players[n] = p;
+    public void setPlayer(int id, String race, String color, String name) {
+        if (players[id - 1] == null) {
+            players[id - 1] = new Player(difficulty, id, race, color, name);
         }
     }
 
-    public static void setComputers(ArrayList<String> colorCodes) {
+    public void setComputers(List<String> colorCodes) {
         if (players[3] == null) {
             String[] raceCodes = {"Human", "Flapper", "Bonzoid", "Buzzite",
                     "Ugaite"};
@@ -44,104 +54,100 @@ public class Game {
         store = new Store(difficulty);
     }
 
-    public static void buyTile(int i, int j) {
+    public void buyTile(int i, int j) {
         round.buyTile(map.getTile(i, j));
     }
 
-    public static boolean confirmPurchase(int i, int j, int id) {
+    public boolean confirmPurchase(int i, int j, int id) {
         return map.getOwner(i, j) == id;
     }
 
-    public static void pass() {
+    public void pass() {
         round.pass();
     }
 
-    public static void resetTurnTime() {
+    public void resetTurnTime() {
         round.resetTurnTime();
     }
 
-    public static void pub() {
+    public void pub() {
         round.gamble();
     }
 
-    public static void buy(int order) {
+    public void disarm() {
+        round.disarm();
+    }
+
+    public void buy(int order) {
         store.buy(order, players[round.getNextTurn() - 1]);
     }
 
-    public static void sell(int order) {
+    public void sell(int order) {
         store.sell(order, players[round.getNextTurn() - 1]);
     }
 
-    public static int getStock(int type) {
+    public int getStock(int type) {
         return store.getStock(type);
     }
 
-    public static String getTileType(int i, int j) {
+    public String getTileType(int i, int j) {
         return map.getTileType(i, j);
     }
 
-    public static int getOwner(int i, int j) {
+    public int getOwner(int i, int j) {
         return map.getOwner(i, j);
     }
 
-    public static int getNumMountains(int i, int j) {
+    public int getNumMountains(int i, int j) {
         return map.getMountains(i, j);
     }
 
-    public static boolean hasMule(int i, int j) {
+    public boolean hasMule(int i, int j) {
         return map.hasMule(i, j);
     }
 
-    public static void placeMule(int i, int j) {
+    public void placeMule(int i, int j) {
         map.placeMule(i, j, players[round.getNextTurn() - 1].getMule());
         players[round.getNextTurn() - 1].setMule(null);
     }
 
-    public static void removeMule() {
+    public void removeMule() {
         players[round.getNextTurn() - 1].setMule(null);
     }
 
-    public static int getPlayerNum() {
+    public int getPlayerNum() {
         return playerNum;
     }
 
-    public static void setPlayerNum(int p) {
-        playerNum = p;
-    }
-
-    public static int getDifficulty() {
+    public int getDifficulty() {
         return difficulty;
     }
 
-    public static void setDifficulty(int d) {
-        difficulty = d;
-    }
-
-    public static int getMapType() {
+    public int getMapType() {
         return mapType;
     }
 
-    public static void setMapType(int m) {
-        mapType = m;
-    }
-
-    public static int getTime() {
+    public int getTime() {
         return round.getTime();
     }
 
-    public static int getNextTurn() {
+    public int getNextTurn() {
         return round.getNextTurn();
     }
 
-    public static int getRound() {
+    public int getRound() {
         return round.getRound();
     }
 
-    public static boolean getPhase() {
+    public boolean getPhase() {
         return round.getPhase();
     }
 
-    public static String getData(int type, int index) {
+    public int getEventType() {
+        return round.getEventType();
+    }
+
+    public String getData(int type, int index) {
         String ret = type == 1 ? "White" : "None";
         if (index >= 1 && index <= 4) {
             ret = players[index - 1].getData(type);
@@ -149,7 +155,7 @@ public class Game {
         return ret;
     }
 
-    public static int getResources(int type, int index) {
+    public int getResources(int type, int index) {
         int ret = 0;
         if (index >= 1 && index <= 4) {
             ret = players[index - 1].getResources(type);
@@ -157,7 +163,7 @@ public class Game {
         return ret;
     }
 
-    public static boolean getMule(int index) {
+    public boolean getMule(int index) {
         boolean ret = false;
         if (index >= 1 && index <= 4) {
             ret = players[index - 1].getMule() != null;
@@ -165,7 +171,7 @@ public class Game {
         return ret;
     }
 
-    public static int getScore(int index) {
+    public int getScore(int index) {
         int ret = 0;
         if (index >= 1 && index <= 4) {
             ret = players[index - 1].getScore();

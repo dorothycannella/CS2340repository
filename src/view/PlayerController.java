@@ -7,7 +7,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
-import model.Player;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,6 +34,7 @@ public class PlayerController {
     private ArrayList<String> colorCodes;
 
     @FXML protected void initialize() {
+        Game game = Main.getGame();
         colorCodes = new ArrayList<>(5);
         colorCodes.add("Red");
         colorCodes.add("Orange");
@@ -63,13 +63,12 @@ public class PlayerController {
                 ((RadioButton) colors.getSelectedToggle()).setDisable(true);
                 colors.getSelectedToggle().setSelected(false);
                 colorCodes.remove(color);
-                Game.setPlayer(new Player(Game.getDifficulty(), player, race,
-                        color, name), player - 1);
-                if (player < Game.getPlayerNum()) {
+                game.setPlayer(player, race, color, name);
+                if (player < game.getPlayerNum()) {
                     prompt.setText("Player " + (++player) + " Configuration");
                 } else {
                     try {
-                        Game.setComputers(colorCodes);
+                        game.setComputers(colorCodes);
                         Main.swapPane(getClass().getResource("confirm.fxml"));
                     } catch (IOException ex) {
                         System.err.println("Missing Asset: confirm.fxml");

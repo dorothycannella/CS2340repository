@@ -55,14 +55,15 @@ public class TownController {
     private int order;
 
     @FXML protected void initialize() {
-        time.setText("0:" + String.format("%02d", Game.getTime()));
+        Game game = Main.getGame();
+        time.setText("0:" + String.format("%02d", game.getTime()));
         time.setVisible(true);
         timer = new Timeline(new KeyFrame(
-                Duration.millis(1000),
+                Duration.millis(10),
                 e -> {
                     time.setText("0:" + String.format("%02d",
-                            Game.getTime()));
-                    if (Game.getTime() <= 0) {
+                            game.getTime()));
+                    if (game.getTime() <= 0) {
                         try {
                             Main.swapPane(getClass().getResource("map.fxml"));
                         } catch (IOException ex) {
@@ -105,7 +106,7 @@ public class TownController {
                     + "reen.jpg").toExternalForm()));
         });
         gamble.setOnAction(e -> {
-            Game.pub();
+            game.pub();
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex) {
@@ -113,7 +114,7 @@ public class TownController {
             }
         });
         store.setOnAction(e1 -> {
-            refreshData();
+            refreshData(game);
             pub.setVisible(false);
             store.setVisible(false);
             land.setVisible(false);
@@ -151,41 +152,41 @@ public class TownController {
         buy.setOnAction(e -> {
             if (menu.getSelectedToggle() != null) {
                 ((RadioButton) menu.getSelectedToggle()).fire();
-                Game.buy(order);
-                refreshData();
+                game.buy(order);
+                refreshData(game);
             }
         });
         sell.setOnAction(e -> {
             if (menu.getSelectedToggle() != null) {
                 ((RadioButton) menu.getSelectedToggle()).fire();
-                Game.sell(order);
-                refreshData();
+                game.sell(order);
+                refreshData(game);
             }
         });
     }
 
-    private void refreshData() {
-        food.setText("Remaining: " + Game.getStock(0));
-        energy.setText("Remaining: " + Game.getStock(1));
-        smithore.setText("Remaining: " + Game.getStock(2));
-        crystite.setText("Remaining: " + Game.getStock(3));
-        mules.setText(Integer.toString(Game.getStock(4)));
-        int current = Game.getNextTurn();
-        String color = Game.getData(1, current);
-        player.setText(Game.getData(2, current));
+    private void refreshData(Game game) {
+        food.setText("Remaining: " + game.getStock(0));
+        energy.setText("Remaining: " + game.getStock(1));
+        smithore.setText("Remaining: " + game.getStock(2));
+        crystite.setText("Remaining: " + game.getStock(3));
+        mules.setText(Integer.toString(game.getStock(4)));
+        int current = game.getNextTurn();
+        String color = game.getData(1, current);
+        player.setText(game.getData(2, current));
         player.setTextFill(Paint.valueOf(color));
-        pMoney.setText("Money: " + Game.getResources(0, current));
+        pMoney.setText("Money: " + game.getResources(0, current));
         pMoney.setTextFill(Paint.valueOf(color));
-        pFood.setText("Food: " + Game.getResources(1, current));
+        pFood.setText("Food: " + game.getResources(1, current));
         pFood.setTextFill(Paint.valueOf(color));
-        pEnergy.setText("Energy: " + Game.getResources(2, current));
+        pEnergy.setText("Energy: " + game.getResources(2, current));
         pEnergy.setTextFill(Paint.valueOf(color));
-        pSmithore.setText("Smithore: " + Game.getResources(3, current));
+        pSmithore.setText("Smithore: " + game.getResources(3, current));
         pSmithore.setTextFill(Paint.valueOf(color));
-        pCrystite.setText("Crystite: " + Game.getResources(4, current));
+        pCrystite.setText("Crystite: " + game.getResources(4, current));
         pCrystite.setTextFill(Paint.valueOf(color));
         pMules.setText("Unplaced MULEs: "
-                + (Game.getMule(Game.getNextTurn()) ? 1 : 0));
+                + (game.getMule(game.getNextTurn()) ? 1 : 0));
         pMules.setTextFill(Paint.valueOf(color));
     }
 }

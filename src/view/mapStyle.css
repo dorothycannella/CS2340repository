@@ -1,5 +1,6 @@
 .root {
 	-fx-background-color: black;
+	-fx-font-size: 10;
 }
 
 .button {

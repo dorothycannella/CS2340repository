@@ -8,17 +8,16 @@ public class Round {
     private int time;
     private boolean timeActive;
     private Timer timer;
-    private Random rand;
     private PriorityQueue<Player> next;
     private Player[] players;
+    private RandomEvent event;
 
     public Round() {
         round = 1;
         pass = 0;
         time = 5;
         timer = new Timer();
-        rand = new Random();
-        next = new PriorityQueue<>(4, (p1, p2) -> p1.getId() - p2.getId());
+        event = new RandomEvent();
     }
 
     public void stopTimer() {
@@ -29,6 +28,8 @@ public class Round {
 
     public void addPlayers(Player[] players) {
         this.players = players;
+        next = new PriorityQueue<>(players.length,
+                (p1, p2) -> p1.getId() - p2.getId());
         Collections.addAll(next, players);
     }
 
@@ -49,12 +50,15 @@ public class Round {
         if (next.size() == 0) {
             nextRound();
         }
+        if (next.comparator() == null && Math.random() * 100 < 27) {
+            event.trigger(next.size() == players.length, round, next.peek());
+        }
     }
 
     private void nextRound() {
-        if (pass == 4 && next.comparator() != null) {
+        if (pass == players.length && next.comparator() != null) {
             round = 0;
-            next = new PriorityQueue<>(4);
+            next = new PriorityQueue<>(players.length);
             timer.scheduleAtFixedRate(new TimerTask() {
                 @Override
                 public void run() {
@@ -65,12 +69,12 @@ public class Round {
                 }
             }, 0, 1000);
         }
-        Collections.addAll(next, players);
-        pass = 0;
-        round++;
         for (Player player: players) {
             player.calculateProduction();
         }
+        Collections.addAll(next, players);
+        pass = 0;
+        round++;
     }
 
     public void resetTurnTime() {
@@ -96,12 +100,16 @@ public class Round {
         Player current = next.peek();
         int roundBonus = (round / 4 + 1) * 50;
         int timeBonus = ((time + 1) / 13 + 1) * 50;
-        int gambleBonus = roundBonus + rand.nextInt(timeBonus + 1);
+        int gambleBonus = roundBonus + (int) (Math.random() * (timeBonus + 1));
         if (gambleBonus > 250) {
             gambleBonus = 250;
         }
         current.addResources(0, gambleBonus);
         nextTurn();
+    }
+
+    public void disarm() {
+        event.disarm();
     }
 
     public int getTime() {
@@ -115,6 +123,10 @@ public class Round {
 
     public int getRound() {
         return round;
+    }
+
+    public int getEventType() {
+        return event.getType();
     }
 
     public boolean getPhase() {

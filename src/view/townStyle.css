@@ -1,3 +1,7 @@
+.root {
+	-fx-font-size: 10;
+}
+
 .button {
 	-fx-background-color: #09ff00;
 	-fx-border-color: rgb(1, 39, 48);

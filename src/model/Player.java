@@ -1,16 +1,17 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player implements Comparable<Player> {
     private int id;
     private String[] data;
     private int[] resources;
-    private ArrayList<Tile> tiles;
+    private List<Tile> tiles;
     private Mule mule;
 
-    public Player(int dif, int id, String race, String color, String name) {
-        this.id = id;
+    public Player(int d, int i, String race, String color, String name) {
+        id = i;
         data = new String[3];
         data[0] = race;
         data[1] = color;
@@ -22,7 +23,7 @@ public class Player implements Comparable<Player> {
         } else if (race.equals("Human")) {
             resources[0] = 600;
         }
-        resources[1] = dif == 1 ? 8 : 4;
+        resources[1] = d == 1 ? 8 : 4;
         resources[2] = resources[1] / 2;
         tiles = new ArrayList<>();
     }
@@ -63,8 +64,8 @@ public class Player implements Comparable<Player> {
         return mule;
     }
 
-    public void setMule(Mule mule) {
-        this.mule = mule;
+    public void setMule(Mule m) {
+        mule = m;
     }
 
     public int getScore() {

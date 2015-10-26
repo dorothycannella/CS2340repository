@@ -1,7 +1,7 @@
 package model;
 
 public class Map {
-    Tile[][] map;
+    private Tile[][] map;
 
     public Map() {
         map = new Tile[5][9];

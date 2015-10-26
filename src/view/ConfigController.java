@@ -22,23 +22,29 @@ public class ConfigController {
     @FXML private RadioButton numPlayers3;
     @FXML private RadioButton numPlayers4;
     @FXML private Button next;
+    private int dif;
+    private int map;
+    private int num;
     
     @FXML protected void initialize() {
-        difficultyBeginner.setOnAction(e -> Game.setDifficulty(1));
-        difficultyStandard.setOnAction(e -> Game.setDifficulty(2));
-        difficultyTournament.setOnAction(e -> Game.setDifficulty(3));
-        standardMap.setOnAction(e -> Game.setMapType(1));
-        randomMap.setOnAction(e -> Game.setMapType(2));
-        numPlayers1.setOnAction(e -> Game.setPlayerNum(1));
-        numPlayers2.setOnAction(e -> Game.setPlayerNum(2));
-        numPlayers3.setOnAction(e -> Game.setPlayerNum(3));
-        numPlayers4.setOnAction(e -> Game.setPlayerNum(4));
+        Game game = Main.getGame();
+        difficultyBeginner.setOnAction(e -> dif = 1);
+        difficultyStandard.setOnAction(e -> dif = 2);
+        difficultyTournament.setOnAction(e -> dif = 3);
+        standardMap.setOnAction(e -> map = 1);
+        randomMap.setOnAction(e -> map = 2);
+        numPlayers1.setOnAction(e -> num = 1);
+        numPlayers2.setOnAction(e -> num = 2);
+        numPlayers3.setOnAction(e -> num = 3);
+        numPlayers4.setOnAction(e -> num = 4);
         next.setOnAction(e -> {
-            if (difficulty.getSelectedToggle() != null && mapType.getSelectedToggle() != null
+            if (difficulty.getSelectedToggle() != null
+                    && mapType.getSelectedToggle() != null
                     && numPlayers.getSelectedToggle() != null) {
                 ((RadioButton) difficulty.getSelectedToggle()).fire();
                 ((RadioButton) mapType.getSelectedToggle()).fire();
                 ((RadioButton) numPlayers.getSelectedToggle()).fire();
+                Main.setGame(new Game(dif, map, num));
                 try {
                     Main.swapPane(getClass().getResource("player.fxml"));
                 } catch (IOException ex) {
