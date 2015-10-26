@@ -26,31 +26,32 @@ public class ConfirmController {
     @FXML private Button next;
 
     @FXML protected void initialize() {
+        Game game = Main.getGame();
         String[] difficultyCodes = {"Beginner Level", "Standard Level",
                                     "Tournament Level"};
         String[] mapCodes = {"Standard Map", "Random Map"};
-        p1.setFill(Paint.valueOf(Game.getData(1, 1)));
-        p2.setFill(Paint.valueOf(Game.getData(1, 2)));
-        p3.setFill(Paint.valueOf(Game.getData(1, 3)));
-        p4.setFill(Paint.valueOf(Game.getData(1, 4)));
-        name1.setText(Game.getData(2, 1));
-        name1.setFill(Paint.valueOf(Game.getData(1, 1)));
-        name2.setText(Game.getData(2, 2));
-        name2.setFill(Paint.valueOf(Game.getData(1, 2)));
-        name3.setText(Game.getData(2, 3));
-        name3.setFill(Paint.valueOf(Game.getData(1, 3)));
-        name4.setText(Game.getData(2, 4));
-        name4.setFill(Paint.valueOf(Game.getData(1, 4)));
-        race1.setText(Game.getData(0, 1));
-        race1.setFill(Paint.valueOf(Game.getData(1, 1)));
-        race2.setText(Game.getData(0, 2));
-        race2.setFill(Paint.valueOf(Game.getData(1, 2)));
-        race3.setText(Game.getData(0, 3));
-        race3.setFill(Paint.valueOf(Game.getData(1, 3)));
-        race4.setText(Game.getData(0, 4));
-        race4.setFill(Paint.valueOf(Game.getData(1, 4)));
-        diff.setText(difficultyCodes[Game.getDifficulty() - 1]);
-        nam.setText(mapCodes[Game.getMapType() - 1]);
+        p1.setFill(Paint.valueOf(game.getData(1, 1)));
+        p2.setFill(Paint.valueOf(game.getData(1, 2)));
+        p3.setFill(Paint.valueOf(game.getData(1, 3)));
+        p4.setFill(Paint.valueOf(game.getData(1, 4)));
+        name1.setText(game.getData(2, 1));
+        name1.setFill(Paint.valueOf(game.getData(1, 1)));
+        name2.setText(game.getData(2, 2));
+        name2.setFill(Paint.valueOf(game.getData(1, 2)));
+        name3.setText(game.getData(2, 3));
+        name3.setFill(Paint.valueOf(game.getData(1, 3)));
+        name4.setText(game.getData(2, 4));
+        name4.setFill(Paint.valueOf(game.getData(1, 4)));
+        race1.setText(game.getData(0, 1));
+        race1.setFill(Paint.valueOf(game.getData(1, 1)));
+        race2.setText(game.getData(0, 2));
+        race2.setFill(Paint.valueOf(game.getData(1, 2)));
+        race3.setText(game.getData(0, 3));
+        race3.setFill(Paint.valueOf(game.getData(1, 3)));
+        race4.setText(game.getData(0, 4));
+        race4.setFill(Paint.valueOf(game.getData(1, 4)));
+        diff.setText(difficultyCodes[game.getDifficulty() - 1]);
+        nam.setText(mapCodes[game.getMapType() - 1]);
         next.setOnAction(e -> {
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));

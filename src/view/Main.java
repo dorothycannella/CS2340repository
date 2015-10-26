@@ -11,13 +11,22 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Main extends Application {
-    private static Stage game;
+    private static Stage window;
+    private static Game game;
+
+    public static Game getGame() {
+        return game;
+    }
+
+    public static void setGame(Game g) {
+        game = g;
+    }
 
     public static void swapPane(URL location) throws IOException {
         Parent root = FXMLLoader.load(location);
-        game.setTitle("MULE");
-        game.setScene(new Scene(root, 960, 540));
-        game.show();
+        window.setTitle("MULE");
+        window.setScene(new Scene(root, 960, 540));
+        window.show();
     }
 
     public static void main(String[] args) {
@@ -26,8 +35,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        game = stage;
-        game.setOnCloseRequest(e -> Game.stopTimer());
+        window = stage;
+        window.setOnCloseRequest(e -> game.stopTimer());
         swapPane(getClass().getResource("config.fxml"));
     }
 }

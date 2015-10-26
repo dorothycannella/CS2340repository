@@ -14,12 +14,12 @@ public class Tile {
         return ret;
     }
 
-    public void setOwner(int owner) {
-        this.owner = owner;
+    public void setOwner(int o) {
+        owner = o;
     }
 
-    public void setMountains(int mountains) {
-        this.mountains = mountains;
+    public void setMountains(int m) {
+        mountains = m;
         production[0] -= 1;
         production[1] -= 2;
         production[2] += mountains;
@@ -31,8 +31,8 @@ public class Tile {
         production[2] -= 1;
     }
 
-    public void placeMule(Mule mule) {
-        this.mule = mule;
+    public void placeMule(Mule m) {
+        mule = m;
     }
 
     public int getOwner() {

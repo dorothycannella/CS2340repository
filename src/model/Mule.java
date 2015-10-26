@@ -3,8 +3,8 @@ package model;
 public class Mule {
     private int type;
 
-    public Mule(int type) {
-        this.type = type;
+    public Mule(int t) {
+        type = t;
     }
 
     public int getType() {
