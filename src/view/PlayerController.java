@@ -1,6 +1,6 @@
 package view;
 
-import controller.Game;
+import controller.SystemManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -34,7 +34,7 @@ public class PlayerController {
     private ArrayList<String> colorCodes;
 
     @FXML protected void initialize() {
-        Game game = Main.getGame();
+        SystemManager game = Main.getGame();
         colorCodes = new ArrayList<>(5);
         colorCodes.add("Red");
         colorCodes.add("Orange");

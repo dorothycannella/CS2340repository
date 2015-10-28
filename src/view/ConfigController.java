@@ -27,7 +27,6 @@ public class ConfigController {
     private int num;
     
     @FXML protected void initialize() {
-        Game game = Main.getGame();
         difficultyBeginner.setOnAction(e -> dif = 1);
         difficultyStandard.setOnAction(e -> dif = 2);
         difficultyTournament.setOnAction(e -> dif = 3);

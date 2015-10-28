@@ -1,6 +1,6 @@
 package view;
 
-import controller.Game;
+import controller.SystemManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,13 +12,13 @@ import java.net.URL;
 
 public class Main extends Application {
     private static Stage window;
-    private static Game game;
+    private static SystemManager game;
 
-    public static Game getGame() {
+    public static SystemManager getGame() {
         return game;
     }
 
-    public static void setGame(Game g) {
+    public static void setGame(SystemManager g) {
         game = g;
     }
 

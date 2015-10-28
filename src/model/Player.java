@@ -3,12 +3,12 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player implements Comparable<Player> {
+public class Player implements Actor, Comparable<Actor> {
     private int id;
     private String[] data;
     private int[] resources;
-    private List<Tile> tiles;
-    private Mule mule;
+    private List<Location> tiles;
+    private Device mule;
 
     public Player(int d, int i, String race, String color, String name) {
         id = i;
@@ -29,7 +29,7 @@ public class Player implements Comparable<Player> {
     }
 
     public void calculateProduction() {
-        for (Tile tile: tiles) {
+        for (Location tile: tiles) {
             int[] income = tile.calculateProduction();
             for (int i = 0; i < income.length; i++) {
                 if (income[i] > 0 && resources[2] > 0) {
@@ -44,7 +44,7 @@ public class Player implements Comparable<Player> {
         resources[type] += quantity;
     }
 
-    public void addTile(Tile tile) {
+    public void addTile(Location tile) {
         tiles.add(tile);
     }
 
@@ -60,11 +60,11 @@ public class Player implements Comparable<Player> {
         return resources[type];
     }
 
-    public Mule getMule() {
+    public Device getMule() {
         return mule;
     }
 
-    public void setMule(Mule m) {
+    public void setMule(Device m) {
         mule = m;
     }
 
@@ -73,7 +73,7 @@ public class Player implements Comparable<Player> {
                 + 25 * resources[2] + 50 * resources[3] + 100 * resources[4];
     }
 
-    public int compareTo(Player other) {
+    public int compareTo(Actor other) {
         return this.getScore() - other.getScore();
     }
 }

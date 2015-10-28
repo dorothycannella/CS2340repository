@@ -1,22 +1,19 @@
 package controller;
 
-import model.Map;
-import model.Player;
-import model.Round;
-import model.Store;
+import model.*;
 
 import java.util.List;
 import java.util.Random;
 
-public class Game {
+public class Game implements SystemManager {
     private int difficulty;
     private int mapType;
     private int playerNum;
     private Random rand;
-    private Map map;
-    private Round round;
-    private Store store;
-    private Player[] players;
+    private World map;
+    private TurnProcessor round;
+    private Business store;
+    private Actor[] players;
 
     public Game(int d, int m, int n) {
         difficulty = d;

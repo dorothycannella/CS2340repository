@@ -2,15 +2,15 @@ package model;
 
 import java.util.*;
 
-public class Round {
+public class Round implements TurnProcessor {
     private int round;
     private int pass;
     private int time;
     private boolean timeActive;
     private Timer timer;
-    private PriorityQueue<Player> next;
-    private Player[] players;
-    private RandomEvent event;
+    private PriorityQueue<Actor> next;
+    private Actor[] players;
+    private Event event;
 
     public Round() {
         round = 1;
@@ -26,15 +26,15 @@ public class Round {
         timeActive = false;
     }
 
-    public void addPlayers(Player[] players) {
+    public void addPlayers(Actor[] players) {
         this.players = players;
         next = new PriorityQueue<>(players.length,
                 (p1, p2) -> p1.getId() - p2.getId());
         Collections.addAll(next, players);
     }
 
-    public void buyTile(Tile tile) {
-        Player buyer = next.peek();
+    public void buyTile(Location tile) {
+        Actor buyer = next.peek();
         if (next.comparator() != null && tile.getOwner() == 0 && (round <= 2
                 || buyer.getResources(0) >= 300)) {
             tile.setOwner(buyer.getId());
@@ -69,7 +69,7 @@ public class Round {
                 }
             }, 0, 1000);
         }
-        for (Player player: players) {
+        for (Actor player: players) {
             player.calculateProduction();
         }
         Collections.addAll(next, players);
@@ -78,7 +78,7 @@ public class Round {
     }
 
     public void resetTurnTime() {
-        Player current = next.peek();
+        Actor current = next.peek();
         if (!timeActive && current.getResources(1) >= 3 + (round - 1) / 4) {
             time = 50;
             current.addResources(1, -3 - (round - 1) / 4);
@@ -97,7 +97,7 @@ public class Round {
     }
 
     public void gamble() {
-        Player current = next.peek();
+        Actor current = next.peek();
         int roundBonus = (round / 4 + 1) * 50;
         int timeBonus = ((time + 1) / 13 + 1) * 50;
         int gambleBonus = roundBonus + (int) (Math.random() * (timeBonus + 1));
@@ -117,7 +117,7 @@ public class Round {
     }
 
     public int getNextTurn() {
-        Player current = next.peek();
+        Actor current = next.peek();
         return current.getId();
     }
 

@@ -1,6 +1,6 @@
 package view;
 
-import controller.Game;
+import controller.SystemManager;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -55,7 +55,7 @@ public class TownController {
     private int order;
 
     @FXML protected void initialize() {
-        Game game = Main.getGame();
+        SystemManager game = Main.getGame();
         time.setText("0:" + String.format("%02d", game.getTime()));
         time.setVisible(true);
         timer = new Timeline(new KeyFrame(
@@ -165,7 +165,7 @@ public class TownController {
         });
     }
 
-    private void refreshData(Game game) {
+    private void refreshData(SystemManager game) {
         food.setText("Remaining: " + game.getStock(0));
         energy.setText("Remaining: " + game.getStock(1));
         smithore.setText("Remaining: " + game.getStock(2));
