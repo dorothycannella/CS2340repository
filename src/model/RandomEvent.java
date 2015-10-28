@@ -1,13 +1,13 @@
 package model;
 
-public class RandomEvent {
+public class RandomEvent implements Event {
     private int type;
 
     public RandomEvent() {
         type = -1;
     }
 
-    public void trigger(boolean first, int round, Player current) {
+    public void trigger(boolean first, int round, Actor current) {
         type = (int) (Math.random() * 7);
         int m = (round / 4 + 1) * 25;
         if (type == 0) {

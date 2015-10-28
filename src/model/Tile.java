@@ -1,9 +1,9 @@
 package model;
 
-public class Tile {
+public class Tile implements Location {
     private int owner;
     private int mountains;
-    private Mule mule;
+    private Device mule;
     private int[] production = {2, 3, 1, 0};
 
     public int[] calculateProduction() {
@@ -31,7 +31,7 @@ public class Tile {
         production[2] -= 1;
     }
 
-    public void placeMule(Mule m) {
+    public void placeMule(Device m) {
         mule = m;
     }
 

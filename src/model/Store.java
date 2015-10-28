@@ -1,6 +1,6 @@
 package model;
 
-public class Store {
+public class Store implements Business {
     private static final int[] PRICE = {30, 25, 50, 100, 125, 150, 175, 200};
     private int[] stock;
 
@@ -12,7 +12,7 @@ public class Store {
         stock[4] = difficulty == 1 ? 25 : 14;
     }
 
-    public void buy(int order, Player buyer) {
+    public void buy(int order, Actor buyer) {
         if (order < 4 && buyer.getResources(0) >= PRICE[order]
                 && stock[order] > 0) {
             buyer.addResources(order + 1, 1);
@@ -26,8 +26,8 @@ public class Store {
         }
     }
 
-    public void sell(int order, Player seller) {
-        Mule mule = seller.getMule();
+    public void sell(int order, Actor seller) {
+        Device mule = seller.getMule();
         if (order < 4 && seller.getResources(order + 1) > 0) {
             seller.addResources(order + 1, -1);
             seller.addResources(0, PRICE[order]);

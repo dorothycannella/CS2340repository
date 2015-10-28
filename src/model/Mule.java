@@ -1,6 +1,6 @@
 package model;
 
-public class Mule {
+public class Mule implements Device {
     private int type;
 
     public Mule(int t) {

@@ -1,6 +1,6 @@
 package view;
 
-import controller.Game;
+import controller.SystemManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
@@ -26,7 +26,7 @@ public class ConfirmController {
     @FXML private Button next;
 
     @FXML protected void initialize() {
-        Game game = Main.getGame();
+        SystemManager game = Main.getGame();
         String[] difficultyCodes = {"Beginner Level", "Standard Level",
                                     "Tournament Level"};
         String[] mapCodes = {"Standard Map", "Random Map"};

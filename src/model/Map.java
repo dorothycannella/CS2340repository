@@ -1,7 +1,7 @@
 package model;
 
-public class Map {
-    private Tile[][] map;
+public class Map implements World {
+    private Location[][] map;
 
     public Map() {
         map = new Tile[5][9];
@@ -23,11 +23,11 @@ public class Map {
         }
     }
 
-    public void placeMule(int i, int j, Mule mule) {
+    public void placeMule(int i, int j, Device mule) {
         map[i][j].placeMule(mule);
     }
 
-    public Tile getTile(int i, int j) {
+    public Location getTile(int i, int j) {
         return map[i][j];
     }
 

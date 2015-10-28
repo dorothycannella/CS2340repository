@@ -1,6 +1,6 @@
 package view;
 
-import controller.Game;
+import controller.SystemManager;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -35,7 +35,7 @@ public class MapController {
     Timeline timer;
 
     @FXML protected void initialize() {
-        Game game = Main.getGame();
+        SystemManager game = Main.getGame();
         String[] eventText = {
                 "YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI\nCONTAINING 3 "
                         + "FOOD AND 2 ENERGY UNITS.",
@@ -90,7 +90,7 @@ public class MapController {
         refreshMap(game);
     }
 
-    private void refreshPanel(Game game) {
+    private void refreshPanel(SystemManager game) {
         ObservableList<Node> info = panel.getChildren();
         for (Node n: info) {
             int i = GridPane.getRowIndex(n);
@@ -122,7 +122,7 @@ public class MapController {
         }
     }
 
-    private void refreshMap(Game game) {
+    private void refreshMap(SystemManager game) {
         ObservableList<Node> tiles = grid.getChildren();
         for (Node n: tiles) {
             int i = GridPane.getRowIndex(n);
