@@ -67,6 +67,7 @@ public class TownController {
                         try {
                             Main.swapPane(getClass().getResource("map.fxml"));
                         } catch (IOException ex) {
+                            ex.printStackTrace();
                             System.err.println("Missing Asset: map.fxml");
                         }
                     }
@@ -77,6 +78,7 @@ public class TownController {
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex) {
+                ex.printStackTrace();
                 System.err.println("Missing Asset: map.fxml");
             }
         });
@@ -96,6 +98,7 @@ public class TownController {
                     try {
                         Main.swapPane(getClass().getResource("map.fxml"));
                     } catch (IOException ex) {
+                        ex.printStackTrace();
                         System.err.println("Missing Asset: map.fxml");
                     }
                 });
@@ -110,6 +113,7 @@ public class TownController {
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex) {
+                ex.printStackTrace();
                 System.err.println("Missing Asset: map.fxml");
             }
         });
@@ -132,6 +136,7 @@ public class TownController {
                     try {
                         Main.swapPane(getClass().getResource("map.fxml"));
                     } catch (IOException ex) {
+                        ex.printStackTrace();
                         System.err.println("Missing Asset: map.fxml");
                     }
                 });

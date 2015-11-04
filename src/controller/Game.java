@@ -179,36 +179,32 @@ public class Game implements SystemManager, Serializable {
 
     public void saveGame() throws IOException {
         System.out.println("Saving");
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("src/controller/saves/save.ser"));
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save.ser"));
         out.writeObject(difficulty);
         out.writeObject(mapType);
         out.writeObject(playerNum);
         out.writeObject(rand);
         out.writeObject(map);
         out.writeObject(round);
-        out.writeObject(round.getNext());
-
+        out.writeObject(round.getTurnOrder());
+        out.writeObject(round.getPhase());
         out.writeObject(store);
-        //out.writeObject(store.getStockArray());
         out.writeObject(players);
-
-
         out.close();
     }
 
     public void loadGame() throws IOException, ClassNotFoundException {
         System.out.println("loading");
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("src/controller/saves/save.ser"));
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("save.ser"));
         difficulty = (int) in.readObject();
         mapType = (int) in.readObject();
         playerNum = (int) in.readObject();
         rand = (Random) in.readObject();
         map = (World) in.readObject();
         round = (TurnProcessor) in.readObject();
-        round.setNext((Object[]) in.readObject());
-
+        round.setTurnOrder((List<Actor>) in.readObject(), (boolean) in.readObject());
         store = (Business) in.readObject();
         players = (Actor[]) in.readObject();
-        round.resetTurnTime();
+        in.close();
     }
 }

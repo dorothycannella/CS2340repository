@@ -139,26 +139,22 @@ public class Round implements TurnProcessor, Serializable {
         return next.comparator() != null;
     }
 
-    public Object[] getNext() {
-        return next.toArray();
+    public List<Actor> getTurnOrder() {
+        List<Actor> ret = new ArrayList<>();
+        for (Actor n: next) {
+            ret.add(n);
+        }
+        return ret;
     }
 
-    public void setNext(Object[] loadNext) {
+    public void setTurnOrder(List<Actor> load, boolean phase) {
         refreshGame();
-        int length = 0;
-        for (Object o: loadNext) {
-            if (o != null) {
-                length++;
-            }
+        if (phase) {
+            next = new PriorityQueue<>(players.length,
+                    ((p1, p2) -> p1.getId() - p2.getId()));
         }
-        Actor[] actorArray = new Actor[length];
-        int i = 0;
-        for (Object o: loadNext) {
-            if (o != null) {
-                actorArray[i] = (Actor) o;
-                i++;
-            }
+        for (Actor l: load) {
+            next.add(l);
         }
-        Collections.addAll(next, actorArray);
     }
 }

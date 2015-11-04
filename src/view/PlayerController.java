@@ -71,6 +71,7 @@ public class PlayerController {
                         game.setComputers(colorCodes);
                         Main.swapPane(getClass().getResource("confirm.fxml"));
                     } catch (IOException ex) {
+                        ex.printStackTrace();
                         System.err.println("Missing Asset: confirm.fxml");
                     }
                 }

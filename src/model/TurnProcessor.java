@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public interface TurnProcessor {
     void stopTimer();
     
@@ -25,7 +27,7 @@ public interface TurnProcessor {
 
     boolean getPhase();
 
-    Object[] getNext();
+    List<Actor> getTurnOrder();
 
-    void setNext(Object[] loadNext);
+    void setTurnOrder(List<Actor> load, boolean phase);
 }

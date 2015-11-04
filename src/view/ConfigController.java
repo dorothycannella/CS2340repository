@@ -48,6 +48,7 @@ public class ConfigController {
                 try {
                     Main.swapPane(getClass().getResource("player.fxml"));
                 } catch (IOException ex) {
+                    ex.printStackTrace();
                     System.err.println("Missing Asset: player.fxml");
                 }
             }
@@ -63,6 +64,7 @@ public class ConfigController {
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex)  {
+                ex.printStackTrace();
                 System.err.println("Missing Asset: map.fxml");
             }
         });

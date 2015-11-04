@@ -56,6 +56,7 @@ public class ConfirmController {
             try {
                 Main.swapPane(getClass().getResource("map.fxml"));
             } catch (IOException ex) {
+                ex.printStackTrace();
                 System.err.println("Missing Asset: map.fxml");
             }
         });
