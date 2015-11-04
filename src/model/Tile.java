@@ -1,6 +1,8 @@
 package model;
 
-public class Tile implements Location {
+import java.io.Serializable;
+
+public class Tile implements Location , Serializable {
     private int owner;
     private int mountains;
     private Device mule;

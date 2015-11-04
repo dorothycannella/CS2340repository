@@ -1,22 +1,23 @@
 package model;
 
+import java.io.*;
 import java.util.*;
 
-public class Round implements TurnProcessor {
+public class Round implements TurnProcessor, Serializable {
     private int round;
     private int pass;
     private int time;
     private boolean timeActive;
-    private Timer timer;
-    private PriorityQueue<Actor> next;
+    private transient Timer timer;
+    private transient PriorityQueue<Actor> next;
     private Actor[] players;
     private Event event;
+    private static final long serialVersionUID = 777469922665534901L;
 
     public Round() {
         round = 1;
         pass = 0;
         time = 5;
-        timer = new Timer();
         event = new RandomEvent();
     }
 
@@ -29,7 +30,7 @@ public class Round implements TurnProcessor {
     public void addPlayers(Actor[] players) {
         this.players = players;
         next = new PriorityQueue<>(players.length,
-                (p1, p2) -> p1.getId() - p2.getId());
+                ((p1, p2) -> p1.getId() - p2.getId()));
         Collections.addAll(next, players);
     }
 
@@ -58,16 +59,7 @@ public class Round implements TurnProcessor {
     private void nextRound() {
         if (pass == players.length && next.comparator() != null) {
             round = 0;
-            next = new PriorityQueue<>(players.length);
-            timer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    time--;
-                    if (time <= 0) {
-                        nextTurn();
-                    }
-                }
-            }, 0, 1000);
+            refreshGame();
         }
         for (Actor player: players) {
             player.calculateProduction();
@@ -75,6 +67,20 @@ public class Round implements TurnProcessor {
         Collections.addAll(next, players);
         pass = 0;
         round++;
+    }
+
+    private void refreshGame() {
+        timer = new Timer();
+        next = new PriorityQueue<>(players.length);
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                time--;
+                if (time <= 0) {
+                    nextTurn();
+                }
+            }
+        }, 0, 1000);
     }
 
     public void resetTurnTime() {
@@ -131,5 +137,28 @@ public class Round implements TurnProcessor {
 
     public boolean getPhase() {
         return next.comparator() != null;
+    }
+
+    public Object[] getNext() {
+        return next.toArray();
+    }
+
+    public void setNext(Object[] loadNext) {
+        refreshGame();
+        int length = 0;
+        for (Object o: loadNext) {
+            if (o != null) {
+                length++;
+            }
+        }
+        Actor[] actorArray = new Actor[length];
+        int i = 0;
+        for (Object o: loadNext) {
+            if (o != null) {
+                actorArray[i] = (Actor) o;
+                i++;
+            }
+        }
+        Collections.addAll(next, actorArray);
     }
 }

@@ -1,6 +1,8 @@
 package model;
 
-public class RandomEvent implements Event {
+import java.io.Serializable;
+
+public class RandomEvent implements Event , Serializable {
     private int type;
 
     public RandomEvent() {

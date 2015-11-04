@@ -1,6 +1,8 @@
 package model;
 
-public class Mule implements Device {
+import java.io.Serializable;
+
+public class Mule implements Device, Serializable {
     private int type;
 
     public Mule(int t) {

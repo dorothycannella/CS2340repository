@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player implements Actor, Comparable<Actor> {
+public class Player implements Actor, Comparable<Actor> , Serializable {
     private int id;
     private String[] data;
     private int[] resources;

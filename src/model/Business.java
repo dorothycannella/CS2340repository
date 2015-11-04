@@ -6,4 +6,8 @@ public interface Business {
     void sell(int order, Actor seller);
 
     int getStock(int type);
+
+    int[] getStockArray();
+
+    void setStockArray(Object[] stock);
 }

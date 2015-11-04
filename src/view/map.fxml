@@ -498,17 +498,28 @@
                   <Insets bottom="30.0" />
                </GridPane.margin>
             </Label>
-            <Button fx:id="pass" mnemonicParsing="false" text="PASS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="pass" mnemonicParsing="false" text="PASS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin></Button>
             <Label fx:id="timeLabel" text="Time Remaining:" textFill="WHITE" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <GridPane.margin>
-                  <Insets bottom="50.0" />
+                  <Insets bottom="55.0" />
                </GridPane.margin>
             </Label>
             <Label fx:id="time" text="Time" textFill="WHITE" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <GridPane.margin>
-                  <Insets top="50.0" />
+                  <Insets top="45.0" />
                </GridPane.margin>
             </Label>
+            <Button fx:id="save" layoutX="68.0" layoutY="329.0" mnemonicParsing="false" text="SAVE GAME" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
          </children>
       </GridPane>
       <GridPane fx:id="popup" layoutX="280.0" layoutY="220.0" prefHeight="100.0" prefWidth="400.0" visible="false">

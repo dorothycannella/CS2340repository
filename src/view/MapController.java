@@ -32,6 +32,7 @@ public class MapController {
     @FXML private Label event;
     @FXML private Button pass;
     @FXML private Button ok;
+    @FXML private Button save;
     Timeline timer;
 
     @FXML protected void initialize() {
@@ -85,6 +86,15 @@ public class MapController {
         pass.setOnAction(e -> {
             game.pass();
             initialize();
+        });
+        save.setOnAction(e -> {
+            try {
+                game.saveGame();
+
+            } catch ( IOException exc ) {
+                exc.printStackTrace();
+                System.out.println( "save file not found" );
+            }
         });
         refreshPanel(game);
         refreshMap(game);

@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface SystemManager {
@@ -62,4 +63,8 @@ public interface SystemManager {
     boolean getMule(int index);
 
     int getScore(int index);
+
+    void saveGame() throws IOException;
+
+    void loadGame() throws IOException, ClassNotFoundException;
 }

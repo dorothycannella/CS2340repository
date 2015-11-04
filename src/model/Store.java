@@ -1,7 +1,10 @@
 package model;
 
-public class Store implements Business {
+import java.io.Serializable;
+
+public class Store implements Business, Serializable {
     private static final int[] PRICE = {30, 25, 50, 100, 125, 150, 175, 200};
+    private static final long serialVersionUID = -5822034114816416291L;
     private int[] stock;
 
     public Store(int difficulty) {
@@ -41,5 +44,15 @@ public class Store implements Business {
 
     public int getStock(int type) {
         return stock[type];
+    }
+
+    public int[] getStockArray() {
+        return stock;
+    }
+
+    public void setStockArray(Object[] stock) {
+        for (int i = 0; i < stock.length; i++) {
+            this.stock[i] = (int) stock[i];
+        }
     }
 }

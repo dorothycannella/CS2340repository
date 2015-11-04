@@ -22,6 +22,7 @@ public class ConfigController {
     @FXML private RadioButton numPlayers3;
     @FXML private RadioButton numPlayers4;
     @FXML private Button next;
+    @FXML private Button load;
     private int dif;
     private int map;
     private int num;
@@ -49,6 +50,20 @@ public class ConfigController {
                 } catch (IOException ex) {
                     System.err.println("Missing Asset: player.fxml");
                 }
+            }
+        });
+        load.setOnAction(e ->{
+            //SystemManager game = new Game(0, 0, 0);
+            Main.setGame(new Game(0,0,0));
+            try {
+                Main.getGame().loadGame();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            try {
+                Main.swapPane(getClass().getResource("map.fxml"));
+            } catch (IOException ex)  {
+                System.err.println("Missing Asset: map.fxml");
             }
         });
     }

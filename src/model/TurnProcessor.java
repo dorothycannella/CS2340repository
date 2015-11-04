@@ -24,4 +24,8 @@ public interface TurnProcessor {
     int getEventType();
 
     boolean getPhase();
+
+    Object[] getNext();
+
+    void setNext(Object[] loadNext);
 }
