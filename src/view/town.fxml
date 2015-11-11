@@ -1,92 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.net.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 <?import java.net.URL?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TownController">
-   <children>
-      <ImageView fx:id="background" fitHeight="540.0" fitWidth="960.0" pickOnBounds="true">
-         <image>
-            <Image url="@assets/townScreen.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="store" layoutX="199.0" layoutY="490.0" mnemonicParsing="false" text="ENTER" />
-      <Button fx:id="land" layoutX="338.0" layoutY="452.0" mnemonicParsing="false" text="ENTER" />
-      <Button fx:id="pub" layoutX="561.0" layoutY="452.0" mnemonicParsing="false" text="ENTER" />
-      <Button fx:id="assay" layoutX="718.0" layoutY="490.0" mnemonicParsing="false" text="ENTER" />
-      <Button fx:id="exit" layoutX="463.0" layoutY="498.0" mnemonicParsing="false" text="EXIT" />
-      <Button fx:id="gamble" layoutX="450.0" layoutY="409.0" mnemonicParsing="false" text="GAMBLE" visible="false" />
-      <Label fx:id="time" layoutX="862.0" layoutY="14.0" text="Time" visible="false">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <GridPane fx:id="storeGrid" alignment="CENTER_RIGHT" layoutX="161.0" layoutY="102.0" prefHeight="223.0" prefWidth="623.0" visible="false">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0"
+      prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.TownController">
+    <stylesheets>
+        <URL value="@townStyle.css"/>
+    </stylesheets>
+    <ImageView fx:id="background" fitHeight="540.0" fitWidth="960.0" pickOnBounds="true">
+        <Image url="@assets/townScreen.jpg"/>
+    </ImageView>
+    <Button fx:id="store" layoutX="199.0" layoutY="490.0" mnemonicParsing="false" text="ENTER"/>
+    <Button fx:id="land" layoutX="338.0" layoutY="452.0" mnemonicParsing="false" text="ENTER"/>
+    <Button fx:id="pub" layoutX="561.0" layoutY="452.0" mnemonicParsing="false" text="ENTER"/>
+    <Button fx:id="assay" layoutX="718.0" layoutY="490.0" mnemonicParsing="false" text="ENTER"/>
+    <Button fx:id="exit" layoutX="463.0" layoutY="498.0" mnemonicParsing="false" text="EXIT"/>
+    <Button fx:id="gamble" layoutX="450.0" layoutY="409.0" mnemonicParsing="false" text="GAMBLE" visible="false"/>
+    <Label fx:id="time" layoutX="862.0" layoutY="14.0" text="Time" visible="false">
+        <font>
+          <Font size="36.0"/>
+        </font>
+    </Label>
+    <GridPane fx:id="storeGrid" alignment="CENTER_RIGHT" layoutX="161.0" layoutY="102.0" prefHeight="223.0"
+              prefWidth="623.0" visible="false">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
-            <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
-          <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
-          <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0"/>
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
         </rowConstraints>
-         <children>
-            <Button fx:id="buy" mnemonicParsing="false" text="BUY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <Button fx:id="sell" mnemonicParsing="false" text="SELL" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <RadioButton fx:id="buyFood" mnemonicParsing="false" text=" Food: $30" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-               <toggleGroup>
-                  <ToggleGroup fx:id="menu" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton fx:id="buyEnergy" mnemonicParsing="false" text="Energy: $25" toggleGroup="$menu" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <RadioButton fx:id="buySmithore" mnemonicParsing="false" text="Smithore: $50" toggleGroup="$menu" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <RadioButton fx:id="buyCrystite" mnemonicParsing="false" text="Crystite: $100" toggleGroup="$menu" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <RadioButton fx:id="buyFoodMule" mnemonicParsing="false" text=" Food MULE: $125" toggleGroup="$menu" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <RadioButton fx:id="buyEnergyMule" mnemonicParsing="false" text="Energy MULE: $150" toggleGroup="$menu" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <RadioButton fx:id="buySmithoreMule" mnemonicParsing="false" text="Smithore MULE: $175" toggleGroup="$menu" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <RadioButton fx:id="buyCrystiteMule" mnemonicParsing="false" text="Crystite MULE: $200" toggleGroup="$menu" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Label text="Remaining:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Label fx:id="mules" text="25" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Label fx:id="food" text="Remaining: 16" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Label fx:id="energy" text="Remaining: 16" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Label fx:id="smithore" text="Remaining: 0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Label fx:id="crystite" text="Remaining: 0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-         </children>
-      </GridPane>
-      <GridPane fx:id="stats" layoutX="328.0" layoutY="404.0" prefHeight="86.0" prefWidth="306.0" visible="false">
+        <Button fx:id="buy" mnemonicParsing="false" text="BUY" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                GridPane.rowIndex="5" GridPane.valignment="CENTER"/>
+        <Button fx:id="sell" mnemonicParsing="false" text="SELL" GridPane.columnIndex="2"
+                GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER"/>
+        <RadioButton fx:id="buyFood" mnemonicParsing="false" text=" Food: $30" GridPane.halignment="CENTER"
+                     GridPane.valignment="CENTER">
+            <toggleGroup>
+                <ToggleGroup fx:id="menu"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="buyEnergy" mnemonicParsing="false" text="Energy: $25" toggleGroup="$menu"
+                     GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+        <RadioButton fx:id="buySmithore" mnemonicParsing="false" text="Smithore: $50" toggleGroup="$menu"
+                     GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+        <RadioButton fx:id="buyCrystite" mnemonicParsing="false" text="Crystite: $100" toggleGroup="$menu"
+                     GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+        <RadioButton fx:id="buyFoodMule" mnemonicParsing="false" text=" Food MULE: $125" toggleGroup="$menu"
+                     GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
+        <RadioButton fx:id="buyEnergyMule" mnemonicParsing="false" text="Energy MULE: $150" toggleGroup="$menu"
+                     GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3"
+                     GridPane.valignment="CENTER"/>
+        <RadioButton fx:id="buySmithoreMule" mnemonicParsing="false" text="Smithore MULE: $175" toggleGroup="$menu"
+                     GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3"
+                     GridPane.valignment="CENTER"/>
+        <RadioButton fx:id="buyCrystiteMule" mnemonicParsing="false" text="Crystite MULE: $200" toggleGroup="$menu"
+                     GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3"
+                     GridPane.valignment="CENTER"/>
+        <Label text="Remaining:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4"
+               GridPane.valignment="CENTER"/>
+        <Label fx:id="mules" text="25" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4"
+               GridPane.valignment="CENTER"/>
+        <Label fx:id="food" text="Remaining: 16" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+               GridPane.valignment="CENTER"/>
+        <Label fx:id="energy" text="Remaining: 16" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+        <Label fx:id="smithore" text="Remaining: 0" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+               GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+        <Label fx:id="crystite" text="Remaining: 0" GridPane.columnIndex="3" GridPane.halignment="CENTER"
+               GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+    </GridPane>
+    <GridPane fx:id="stats" layoutX="328.0" layoutY="404.0" prefHeight="86.0" prefWidth="306.0" visible="false">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
         </rowConstraints>
-         <children>
-            <Label fx:id="player" text="Player" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label fx:id="pFood" text="Food:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="pMoney" text="Money:" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="pEnergy" text="Energy:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="pSmithore" text="Smithore:" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label fx:id="pCrystite" text="Crystite:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label fx:id="pMules" text="MULEs:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-         </children>
-      </GridPane>
-   </children>
-   <stylesheets>
-      <URL value="@townStyle.css" />
-   </stylesheets>
+        <Label fx:id="player" text="Player" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.valignment="CENTER"/>
+        <Label fx:id="pFood" text="Food:" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="1"/>
+        <Label fx:id="pMoney" text="Money:" GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
+        <Label fx:id="pEnergy" text="Energy:" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+               GridPane.rowIndex="1"/>
+        <Label fx:id="pSmithore" text="Smithore:" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+        <Label fx:id="pCrystite" text="Crystite:" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="2"/>
+        <Label fx:id="pMules" text="MULEs:" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+               GridPane.rowIndex="2"/>
+    </GridPane>
 </Pane>

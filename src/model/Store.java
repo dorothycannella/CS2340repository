@@ -5,54 +5,47 @@ import java.io.Serializable;
 public class Store implements Business, Serializable {
     private static final int[] PRICE = {30, 25, 50, 100, 125, 150, 175, 200};
     private static final long serialVersionUID = -5822034114816416291L;
-    private int[] stock;
+    private final int[] stock;
 
+    @SuppressWarnings("unused")
     public Store(int difficulty) {
-        stock = new int[5];
-        stock[0] = difficulty == 1 ? 16 : 8;
+        stock = new int[STOCK_SIZE];
+        stock[0] = difficulty == 1 ? BEGINNER_BASICS : STANDARD_BASICS;
         stock[1] = stock[0];
-        stock[2] = difficulty == 1 ? 0 : 8;
-        stock[4] = difficulty == 1 ? 25 : 14;
+        stock[2] = difficulty == 1 ? BEGINNER_SMITHORE : STANDARD_SMITHORE;
+        stock[4] = difficulty == 1 ? BEGINNER_CRYSTITE : STANDARD_CRYSTITE;
     }
 
-    public void buy(int order, Actor buyer) {
-        if (order < 4 && buyer.getResources(0) >= PRICE[order]
+    public final void buy(int order, Actor buyer) {
+        if (order < STOCK_SIZE - 1 && buyer.getResources(0) >= PRICE[order]
                 && stock[order] > 0) {
             buyer.addResources(order + 1, 1);
             buyer.addResources(0, PRICE[order] * -1);
             stock[order]--;
-        } else if (order >= 4 && buyer.getResources(0) >= PRICE[order]
-                && stock[4] > 0 && buyer.getMule() == null) {
-            buyer.setMule(new Mule(order - 4));
+        } else if (order >= STOCK_SIZE - 1 && buyer.getResources(0)
+                >= PRICE[order] && stock[STOCK_SIZE - 1] > 0
+                && buyer.getMule() == null) {
+            buyer.setMule(new Mule(order - STOCK_SIZE + 1));
             buyer.addResources(0, PRICE[order] * -1);
-            stock[4]--;
+            stock[STOCK_SIZE - 1]--;
         }
     }
 
-    public void sell(int order, Actor seller) {
+    public final void sell(int order, Actor seller) {
         Device mule = seller.getMule();
-        if (order < 4 && seller.getResources(order + 1) > 0) {
+        if (order < STOCK_SIZE - 1 && seller.getResources(order + 1) > 0) {
             seller.addResources(order + 1, -1);
             seller.addResources(0, PRICE[order]);
             stock[order]++;
-        } else if (order >= 4 && mule != null && mule.getType() == order - 4) {
+        } else if (order >= STOCK_SIZE - 1 && mule != null
+                && mule.getType() == order - STOCK_SIZE + 1) {
             seller.setMule(null);
             seller.addResources(0, PRICE[order]);
-            stock[4]++;
+            stock[STOCK_SIZE - 1]++;
         }
     }
 
-    public int getStock(int type) {
+    public final int getStock(int type) {
         return stock[type];
-    }
-
-    public int[] getStockArray() {
-        return stock;
-    }
-
-    public void setStockArray(Object[] stock) {
-        for (int i = 0; i < stock.length; i++) {
-            this.stock[i] = (int) stock[i];
-        }
     }
 }

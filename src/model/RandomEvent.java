@@ -2,15 +2,16 @@ package model;
 
 import java.io.Serializable;
 
-public class RandomEvent implements Event , Serializable {
+public class RandomEvent implements Event, Serializable {
     private int type;
 
+    @SuppressWarnings("unused")
     public RandomEvent() {
         type = -1;
     }
 
-    public void trigger(boolean first, int round, Actor current) {
-        type = (int) (Math.random() * 7);
+    public final void trigger(boolean first, int round, Actor current) {
+        type = (int) (Math.random() * NUM_EVENTS);
         int m = (round / 4 + 1) * 25;
         if (type == 0) {
             current.addResources(1, 3);
@@ -32,11 +33,11 @@ public class RandomEvent implements Event , Serializable {
         }
     }
 
-    public void disarm() {
+    public final void disarm() {
         type = -1;
     }
 
-    public int getType() {
+    public final int getType() {
         return type;
     }
 }

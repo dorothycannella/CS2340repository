@@ -3,10 +3,11 @@ package model;
 import java.io.Serializable;
 
 public class Map implements World, Serializable {
-    private Location[][] map;
+    private final Location[][] map;
 
+    @SuppressWarnings("unused")
     public Map() {
-        map = new Tile[5][9];
+        map = new Tile[HEIGHT][WIDTH];
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[0].length; j++) {
                 map[i][j] = new Tile();
@@ -25,15 +26,15 @@ public class Map implements World, Serializable {
         }
     }
 
-    public void placeMule(int i, int j, Device mule) {
+    public final void placeMule(int i, int j, Device mule) {
         map[i][j].placeMule(mule);
     }
 
-    public Location getTile(int i, int j) {
+    public final Location getTile(int i, int j) {
         return map[i][j];
     }
 
-    public String getTileType(int i, int j) {
+    public final String getTileType(int i, int j) {
         String ret;
         if (i == 2 && j == 4) {
             ret = "Town";
@@ -47,15 +48,15 @@ public class Map implements World, Serializable {
         return ret;
     }
 
-    public int getOwner(int i, int j) {
+    public final int getOwner(int i, int j) {
         return map[i][j].getOwner();
     }
 
-    public int getMountains(int i, int j) {
+    public final int getMountains(int i, int j) {
         return map[i][j].getMountains();
     }
 
-    public boolean hasMule(int i, int j) {
+    public final boolean hasMule(int i, int j) {
         return map[i][j].hasMule();
     }
 }

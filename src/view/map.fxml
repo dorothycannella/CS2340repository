@@ -1,546 +1,480 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import java.net.URL?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MapController">
-   <children>
-      <GridPane fx:id="grid" prefHeight="450.0" prefWidth="800.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whiteRiver.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whiteRiver.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whiteTown.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whiteRiver.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whiteRiver.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="0">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@assets/whitePlains.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@assets/whiteMountains.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </GridPane>
-      <GridPane fx:id="panel" alignment="BOTTOM_LEFT" layoutY="450.0" prefHeight="90.0" prefWidth="960.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Player 1" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Race" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Money:" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Food:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Energy:" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Smithore:" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Crystite:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Score:" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Race" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Name" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Player 2" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="95.0" layoutY="42.0" text="Food:" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="95.0" layoutY="15.0" text="Money:" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="95.0" layoutY="68.0" text="Energy:" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="335.0" layoutY="68.0" text="Energy:" GridPane.columnIndex="7" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="335.0" layoutY="15.0" text="Money:" GridPane.columnIndex="7" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="335.0" layoutY="42.0" text="Food:" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="570.0" layoutY="42.0" text="Money:" GridPane.columnIndex="10" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="570.0" layoutY="42.0" text="Food:" GridPane.columnIndex="10" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="570.0" layoutY="42.0" text="Energy:" GridPane.columnIndex="10" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="175.0" layoutY="68.0" text="Score:" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="175.0" layoutY="42.0" text="Crystite:" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="175.0" layoutY="15.0" text="Smithore:" GridPane.columnIndex="5" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="410.0" layoutY="42.0" text="Smithore:" GridPane.columnIndex="8" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="410.0" layoutY="42.0" text="Score:" GridPane.columnIndex="8" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="410.0" layoutY="42.0" text="Crystite:" GridPane.columnIndex="8" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="650.0" layoutY="42.0" text="Crystite:" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="650.0" layoutY="42.0" text="Smithore:" GridPane.columnIndex="11" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="650.0" layoutY="42.0" text="Score:" GridPane.columnIndex="11" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="15.0" layoutY="15.0" text="Player 3" GridPane.columnIndex="6" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="15.0" layoutY="42.0" text="Name" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="15.0" layoutY="68.0" text="Race" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="490.0" layoutY="42.0" text="Name" GridPane.columnIndex="9" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="490.0" layoutY="42.0" text="Player 4" GridPane.columnIndex="9" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="490.0" layoutY="42.0" text="Race" GridPane.columnIndex="9" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-            </Label>
-         </children>
-      </GridPane>
-      <Line endY="88.0" fill="#979797" layoutX="240.0" layoutY="451.0" stroke="#979797" strokeWidth="2.0" />
-      <Line endY="88.0" fill="#979797" layoutX="480.0" layoutY="451.0" stroke="#979797" strokeWidth="2.0" />
-      <Line endY="88.0" fill="#979797" layoutX="720.0" layoutY="451.0" stroke="#979797" strokeWidth="2.0" />
-      <Line endX="158.0" fill="#979797" layoutX="801.0" layoutY="449.0" stroke="#979797" strokeWidth="2.0" />
-      <GridPane fx:id="data" layoutX="800.0" prefHeight="448.0" prefWidth="160.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label fx:id="phase" text="Phase" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <GridPane.margin>
-                  <Insets top="30.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="turn" text="Player's Turn" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label fx:id="round" text="Round" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
-               <GridPane.margin>
-                  <Insets bottom="30.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="type" text="Tile Type" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-               <GridPane.margin>
-                  <Insets top="30.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="owner" text="Tile Owner" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Label fx:id="price" text="Price" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
-               <GridPane.margin>
-                  <Insets bottom="30.0" />
-               </GridPane.margin>
-            </Label>
-            <Button fx:id="pass" mnemonicParsing="false" text="PASS" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-               <GridPane.margin>
-                  <Insets top="30.0" />
-               </GridPane.margin></Button>
-            <Label fx:id="timeLabel" text="Time Remaining:" textFill="WHITE" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets bottom="55.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="time" text="Time" textFill="WHITE" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets top="45.0" />
-               </GridPane.margin>
-            </Label>
-            <Button fx:id="save" layoutX="68.0" layoutY="329.0" mnemonicParsing="false" text="SAVE GAME" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
-               <GridPane.margin>
-                  <Insets bottom="10.0" />
-               </GridPane.margin>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Button>
-         </children>
-      </GridPane>
-      <GridPane fx:id="popup" layoutX="280.0" layoutY="220.0" prefHeight="100.0" prefWidth="400.0" visible="false">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
-            <Label fx:id="event" text="Event" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </Label>
-            <Button fx:id="ok" mnemonicParsing="false" text="OK" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-         </children>
-      </GridPane>
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0"
+      prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.MapController">
    <stylesheets>
-      <URL value="@mapStyle.css" />
+      <URL value="@mapStyle.css"/>
    </stylesheets>
+   <GridPane fx:id="grid" prefHeight="450.0" prefWidth="800.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+      </rowConstraints>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="3">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="4">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="0">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="0">
+         <Image url="@assets/whiteRiver.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+         <Image url="@assets/whiteRiver.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+         <Image url="@assets/whiteTown.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+         <Image url="@assets/whiteRiver.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+         <Image url="@assets/whiteRiver.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="0">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="0">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="0">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="0">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="2">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="3">
+         <Image url="@assets/whitePlains.jpg"/>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="4">
+         <Image url="@assets/whiteMountains.jpg"/>
+      </ImageView>
+   </GridPane>
+   <GridPane fx:id="panel" alignment="BOTTOM_LEFT" layoutY="450.0" prefHeight="90.0" prefWidth="960.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+      </rowConstraints>
+      <Label text="Player 1" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Race" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Money:" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Food:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Energy:" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Smithore:" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Crystite:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Score:" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Race" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Name" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label text="Player 2" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="95.0" layoutY="42.0" text="Food:" GridPane.columnIndex="4" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="95.0" layoutY="15.0" text="Money:" GridPane.columnIndex="4" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="95.0" layoutY="68.0" text="Energy:" GridPane.columnIndex="4" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="335.0" layoutY="68.0" text="Energy:" GridPane.columnIndex="7" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="335.0" layoutY="15.0" text="Money:" GridPane.columnIndex="7" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="335.0" layoutY="42.0" text="Food:" GridPane.columnIndex="7" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="570.0" layoutY="42.0" text="Money:" GridPane.columnIndex="10" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="570.0" layoutY="42.0" text="Food:" GridPane.columnIndex="10" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="570.0" layoutY="42.0" text="Energy:" GridPane.columnIndex="10" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="175.0" layoutY="68.0" text="Score:" GridPane.columnIndex="5" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="175.0" layoutY="42.0" text="Crystite:" GridPane.columnIndex="5" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="175.0" layoutY="15.0" text="Smithore:" GridPane.columnIndex="5" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="410.0" layoutY="42.0" text="Smithore:" GridPane.columnIndex="8" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="410.0" layoutY="42.0" text="Score:" GridPane.columnIndex="8" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="410.0" layoutY="42.0" text="Crystite:" GridPane.columnIndex="8" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="650.0" layoutY="42.0" text="Crystite:" GridPane.columnIndex="11" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="650.0" layoutY="42.0" text="Smithore:" GridPane.columnIndex="11" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="650.0" layoutY="42.0" text="Score:" GridPane.columnIndex="11" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="15.0" layoutY="15.0" text="Player 3" GridPane.columnIndex="6" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="15.0" layoutY="42.0" text="Name" GridPane.columnIndex="6" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="15.0" layoutY="68.0" text="Race" GridPane.columnIndex="6" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="490.0" layoutY="42.0" text="Name" GridPane.columnIndex="9" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="490.0" layoutY="42.0" text="Player 4" GridPane.columnIndex="9" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label layoutX="490.0" layoutY="42.0" text="Race" GridPane.columnIndex="9" GridPane.rowIndex="2"
+             GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="5.0"/>
+         </GridPane.margin>
+      </Label>
+   </GridPane>
+   <Line endY="88.0" fill="#979797" layoutX="240.0" layoutY="451.0" stroke="#979797" strokeWidth="2.0"/>
+   <Line endY="88.0" fill="#979797" layoutX="480.0" layoutY="451.0" stroke="#979797" strokeWidth="2.0"/>
+   <Line endY="88.0" fill="#979797" layoutX="720.0" layoutY="451.0" stroke="#979797" strokeWidth="2.0"/>
+   <Line endX="158.0" fill="#979797" layoutX="801.0" layoutY="449.0" stroke="#979797" strokeWidth="2.0"/>
+   <GridPane layoutX="800.0" prefHeight="448.0" prefWidth="160.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+      </rowConstraints>
+      <Label fx:id="phase" text="Phase" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="30.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="turn" text="Player's Turn" textFill="WHITE" GridPane.halignment="CENTER"
+             GridPane.valignment="CENTER"/>
+      <Label fx:id="round" text="Round" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="30.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="type" text="Tile Type" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+             GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="30.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="owner" text="Tile Owner" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER"/>
+      <Label fx:id="price" text="Price" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+             GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="30.0"/>
+         </GridPane.margin>
+      </Label>
+      <Button fx:id="pass" mnemonicParsing="false" text="PASS" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+              GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="30.0"/>
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="timeLabel" text="Time Remaining:" textFill="WHITE" visible="false" GridPane.halignment="CENTER"
+             GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="55.0"/>
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="time" text="Time" textFill="WHITE" visible="false" GridPane.halignment="CENTER"
+             GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="45.0"/>
+         </GridPane.margin>
+      </Label>
+      <Button fx:id="save" layoutX="68.0" layoutY="329.0" mnemonicParsing="false" text="SAVE GAME"
+              GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0"/>
+         </GridPane.margin>
+         <opaqueInsets>
+            <Insets/>
+         </opaqueInsets>
+      </Button>
+   </GridPane>
+   <GridPane fx:id="popup" layoutX="280.0" layoutY="220.0" prefHeight="100.0" prefWidth="400.0" visible="false">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+      </rowConstraints>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" stroke="BLACK" strokeType="INSIDE"
+                 width="400.0"/>
+      <Label fx:id="event" text="Event" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER"
+             GridPane.valignment="TOP">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+         </padding>
+      </Label>
+      <Button fx:id="ok" mnemonicParsing="false" text="OK" GridPane.halignment="CENTER"
+              GridPane.valignment="BOTTOM"/>
+   </GridPane>
 </Pane>

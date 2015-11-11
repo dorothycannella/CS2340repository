@@ -35,7 +35,8 @@ public class MapController {
     @FXML private Button save;
     private Timeline timer;
 
-    @FXML protected void initialize() {
+    @FXML
+    private void initialize() {
         SystemManager game = Main.getGame();
         String[] eventText = {
                 "YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI\nCONTAINING 3 "
