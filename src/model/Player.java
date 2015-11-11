@@ -30,6 +30,7 @@ public class Player implements Actor, Comparable<Actor>, Serializable {
         tiles = new ArrayList<>();
     }
 
+    @Override
     public final void calculateProduction() {
         for (Location tile: tiles) {
             int[] income = tile.calculateProduction();
@@ -42,40 +43,49 @@ public class Player implements Actor, Comparable<Actor>, Serializable {
         }
     }
 
+    @Override
     public final void addResources(int type, int quantity) {
         resources[type] += quantity;
     }
 
+    @Override
     public final void addTile(Location tile) {
         tiles.add(tile);
     }
 
+    @Override
     public final int getId() {
         return id;
     }
 
+    @Override
     public final String getData(int type) {
         return data[type];
     }
 
+    @Override
     public final int getResources(int type) {
         return resources[type];
     }
 
+    @Override
     public final Device getMule() {
         return mule;
     }
 
+    @Override
     public final void setMule(Device m) {
         mule = m;
     }
 
+    @Override
     public final int getScore() {
         return resources[0] + TILES_SCORE * tiles.size() + FOOD_SCORE
                 * resources[1] + ENERGY_SCORE * resources[2] + SMITHORE_SCORE
                 * resources[3] + CRYSTITE_SCORE * resources[4];
     }
 
+    @Override
     @SuppressWarnings("NullableProblems")
     public final int compareTo(Actor other) {
         return this.getScore() - other.getScore();

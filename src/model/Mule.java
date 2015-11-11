@@ -10,6 +10,7 @@ public class Mule implements Device, Serializable {
         type = t;
     }
 
+    @Override
     public final int getType() {
         return type;
     }

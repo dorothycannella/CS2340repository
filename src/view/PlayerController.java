@@ -33,6 +33,9 @@ public class PlayerController {
     private String name;
     private ArrayList<String> colorCodes;
 
+    /**
+     * Manages the display of the player setup screen.
+     */
     @SuppressWarnings("unused")
     @FXML protected void initialize() {
         SystemManager game = Main.getGame();

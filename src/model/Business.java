@@ -9,9 +9,24 @@ public interface Business {
     int BEGINNER_CRYSTITE = 25;
     int STANDARD_CRYSTITE = 14;
 
+    /**
+     * Sell the specified resource to the given player.
+     * @param order id of the resource
+     * @param buyer the player
+     */
     void buy(int order, Actor buyer);
 
+    /**
+     * Buy the specified resource from the player.
+     * @param order id of the resource
+     * @param seller the player
+     */
     void sell(int order, Actor seller);
 
+    /**
+     * Get the remaining stock of the specified resource.
+     * @param type id of the resource
+     * @return amount remaining
+     */
     int getStock(int type);
 }

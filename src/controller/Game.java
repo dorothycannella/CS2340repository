@@ -16,6 +16,12 @@ public class Game implements SystemManager, Serializable {
     private Business store;
     private Actor[] players;
 
+    /**
+     * Initializes Game controller for the given difficulty, map and players.
+     * @param d difficulty
+     * @param m mapType
+     * @param n playerNum
+     */
     @SuppressWarnings("unused")
     public Game(int d, int m, int n) {
         difficulty = d;
@@ -27,12 +33,14 @@ public class Game implements SystemManager, Serializable {
         players = new Player[MAX_PLAYERS];
     }
 
+    @Override
     public final void setPlayer(int id, String race, String color, String name) {
         if (players[id - 1] == null) {
             players[id - 1] = new Player(difficulty, id, race, color, name);
         }
     }
 
+    @Override
     public final void setComputers(List<String> colorCodes) {
         if (players[MAX_PLAYERS - 1] == null) {
             String[] raceCodes = {"Human", "Flapper", "Bonzoid", "Buzzite",
@@ -49,99 +57,123 @@ public class Game implements SystemManager, Serializable {
         store = new Store(difficulty);
     }
 
+    @Override
     public final void buyTile(int i, int j) {
         round.buyTile(map.getTile(i, j));
     }
 
+    @Override
     public final boolean confirmPurchase(int i, int j, int id) {
         return map.getOwner(i, j) == id;
     }
 
+    @Override
     public final void pass() {
         round.pass();
     }
 
+    @Override
     public final void resetTurnTime() {
         round.resetTurnTime();
     }
 
+    @Override
     public final void pub() {
         round.gamble();
     }
 
+    @Override
     public final void disarm() {
         round.disarm();
     }
 
+    @Override
     public final void buy(int order) {
         store.buy(order, players[round.getNextTurn() - 1]);
     }
 
+    @Override
     public final void sell(int order) {
         store.sell(order, players[round.getNextTurn() - 1]);
     }
 
+    @Override
     public final int getStock(int type) {
         return store.getStock(type);
     }
 
+    @Override
     public final String getTileType(int i, int j) {
         return map.getTileType(i, j);
     }
 
+    @Override
     public final int getOwner(int i, int j) {
         return map.getOwner(i, j);
     }
 
+    @Override
     public final int getNumMountains(int i, int j) {
         return map.getMountains(i, j);
     }
 
+    @Override
     public final boolean hasMule(int i, int j) {
         return map.hasMule(i, j);
     }
 
+    @Override
     public final void placeMule(int i, int j) {
         map.placeMule(i, j, players[round.getNextTurn() - 1].getMule());
         players[round.getNextTurn() - 1].setMule(null);
     }
 
+    @Override
     public final void removeMule() {
         players[round.getNextTurn() - 1].setMule(null);
     }
 
+    @Override
     public final int getPlayerNum() {
         return playerNum;
     }
 
+    @Override
     public final int getDifficulty() {
         return difficulty;
     }
 
+    @Override
     public final int getMapType() {
         return mapType;
     }
 
+    @Override
     public final int getTime() {
         return round.getTime();
     }
 
+    @Override
     public final int getNextTurn() {
         return round.getNextTurn();
     }
 
+    @Override
     public final int getRound() {
         return round.getRound();
     }
 
+    @Override
     public final boolean getPhase() {
         return round.getPhase();
     }
 
+    @Override
     public final int getEventType() {
         return round.getEventType();
     }
 
+    @Override
     public final String getData(int type, int index) {
         String ret = type == 1 ? "White" : "None";
         if (index >= 1 && index <= MAX_PLAYERS) {
@@ -150,6 +182,7 @@ public class Game implements SystemManager, Serializable {
         return ret;
     }
 
+    @Override
     public final int getResources(int type, int index) {
         int ret = 0;
         if (index >= 1 && index <= MAX_PLAYERS) {
@@ -158,6 +191,7 @@ public class Game implements SystemManager, Serializable {
         return ret;
     }
 
+    @Override
     public final boolean getMule(int index) {
         boolean ret = false;
         if (index >= 1 && index <= MAX_PLAYERS) {
@@ -166,6 +200,7 @@ public class Game implements SystemManager, Serializable {
         return ret;
     }
 
+    @Override
     public final int getScore(int index) {
         int ret = 0;
         if (index >= 1 && index <= MAX_PLAYERS) {
@@ -174,6 +209,7 @@ public class Game implements SystemManager, Serializable {
         return ret;
     }
 
+    @Override
     public final void saveGame() throws IOException {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save.ser"));
         out.writeObject(difficulty);
@@ -189,6 +225,7 @@ public class Game implements SystemManager, Serializable {
         out.close();
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public final void loadGame() throws IOException, ClassNotFoundException {
         ObjectInputStream in = new ObjectInputStream(new FileInputStream("save.ser"));

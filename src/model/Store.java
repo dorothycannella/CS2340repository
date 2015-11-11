@@ -16,6 +16,7 @@ public class Store implements Business, Serializable {
         stock[4] = difficulty == 1 ? BEGINNER_CRYSTITE : STANDARD_CRYSTITE;
     }
 
+    @Override
     public final void buy(int order, Actor buyer) {
         if (order < STOCK_SIZE - 1 && buyer.getResources(0) >= PRICE[order]
                 && stock[order] > 0) {
@@ -31,6 +32,7 @@ public class Store implements Business, Serializable {
         }
     }
 
+    @Override
     public final void sell(int order, Actor seller) {
         Device mule = seller.getMule();
         if (order < STOCK_SIZE - 1 && seller.getResources(order + 1) > 0) {
@@ -45,6 +47,7 @@ public class Store implements Business, Serializable {
         }
     }
 
+    @Override
     public final int getStock(int type) {
         return stock[type];
     }
