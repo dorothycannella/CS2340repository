@@ -26,14 +26,17 @@ public class Map implements World, Serializable {
         }
     }
 
+    @Override
     public final void placeMule(int i, int j, Device mule) {
         map[i][j].placeMule(mule);
     }
 
+    @Override
     public final Location getTile(int i, int j) {
         return map[i][j];
     }
 
+    @Override
     public final String getTileType(int i, int j) {
         String ret;
         if (i == 2 && j == 4) {
@@ -48,14 +51,17 @@ public class Map implements World, Serializable {
         return ret;
     }
 
+    @Override
     public final int getOwner(int i, int j) {
         return map[i][j].getOwner();
     }
 
+    @Override
     public final int getMountains(int i, int j) {
         return map[i][j].getMountains();
     }
 
+    @Override
     public final boolean hasMule(int i, int j) {
         return map[i][j].hasMule();
     }

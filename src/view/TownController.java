@@ -53,6 +53,9 @@ public class TownController {
     @FXML private ImageView background;
     private int order;
 
+    /**
+     * Manages the display of the town screen.
+     */
     @SuppressWarnings("unused")
     @FXML protected void initialize() {
         SystemManager game = Main.getGame();
@@ -170,6 +173,10 @@ public class TownController {
         });
     }
 
+    /**
+     * Reload the data displayed in the store.
+     * @param game the current game
+     */
     private void refreshData(SystemManager game) {
         food.setText("Remaining: " + game.getStock(0));
         energy.setText("Remaining: " + game.getStock(1));

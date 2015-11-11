@@ -10,6 +10,7 @@ public class RandomEvent implements Event, Serializable {
         type = -1;
     }
 
+    @Override
     public final void trigger(boolean first, int round, Actor current) {
         type = (int) (Math.random() * NUM_EVENTS);
         int m = (round / 4 + 1) * 25;
@@ -33,10 +34,12 @@ public class RandomEvent implements Event, Serializable {
         }
     }
 
+    @Override
     public final void disarm() {
         type = -1;
     }
 
+    @Override
     public final int getType() {
         return type;
     }

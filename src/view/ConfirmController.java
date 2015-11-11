@@ -25,6 +25,9 @@ public class ConfirmController {
     @FXML private Text nam;
     @FXML private Button next;
 
+    /**
+     * Manages the display of the confirmation screen.
+     */
     @SuppressWarnings("unused")
     @FXML protected void initialize() {
         SystemManager game = Main.getGame();

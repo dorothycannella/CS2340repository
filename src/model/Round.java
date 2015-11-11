@@ -22,6 +22,7 @@ public class Round implements TurnProcessor, Serializable {
         event = new RandomEvent();
     }
 
+    @Override
     public final void addPlayers(Actor[] players) {
         this.players = players;
         next = new PriorityQueue<>(players.length,
@@ -29,6 +30,7 @@ public class Round implements TurnProcessor, Serializable {
         Collections.addAll(next, players);
     }
 
+    @Override
     public final void buyTile(Location tile) {
         Actor buyer = next.peek();
         if (next.comparator() != null && tile.getOwner() == 0 && (round <= 2
@@ -40,6 +42,9 @@ public class Round implements TurnProcessor, Serializable {
         }
     }
 
+    /**
+     * Loads the next player's turn.
+     */
     private void nextTurn() {
         timeActive = false;
         next.poll();
@@ -51,6 +56,9 @@ public class Round implements TurnProcessor, Serializable {
         }
     }
 
+    /**
+     * Resets the data for the next round.
+     */
     private void nextRound() {
         if (pass == players.length && next.comparator() != null) {
             round = 0;
@@ -64,6 +72,9 @@ public class Round implements TurnProcessor, Serializable {
         round++;
     }
 
+    /**
+     * Setup the data for the main phase.
+     */
     private void refreshGame() {
         Timer timer = new Timer();
         next = new PriorityQueue<>(players.length);
@@ -78,6 +89,7 @@ public class Round implements TurnProcessor, Serializable {
         }, 0, 1000);
     }
 
+    @Override
     public final void resetTurnTime() {
         Actor current = next.peek();
         if (!timeActive && current.getResources(1) >= 3 + (round - 1) / 4) {
@@ -92,11 +104,13 @@ public class Round implements TurnProcessor, Serializable {
         timeActive = true;
     }
 
+    @Override
     public final void pass() {
         pass++;
         nextTurn();
     }
 
+    @Override
     public final void gamble() {
         Actor current = next.peek();
         int roundBonus = (round / 4 + 1) * 50;
@@ -109,35 +123,43 @@ public class Round implements TurnProcessor, Serializable {
         nextTurn();
     }
 
+    @Override
     public final void disarm() {
         event.disarm();
     }
 
+    @Override
     public final int getTime() {
         return time;
     }
 
+    @Override
     public final int getNextTurn() {
         Actor current = next.peek();
         return current.getId();
     }
 
+    @Override
     public final int getRound() {
         return round;
     }
 
+    @Override
     public final int getEventType() {
         return event.getType();
     }
 
+    @Override
     public final boolean getPhase() {
         return next.comparator() != null;
     }
 
+    @Override
     public final List<Actor> getTurnOrder() {
         return next.stream().collect(Collectors.toList());
     }
 
+    @Override
     public final void setTurnOrder(List<Actor> load, boolean phase) {
         if (phase) {
             next = new PriorityQueue<>(players.length,

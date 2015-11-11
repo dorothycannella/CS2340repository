@@ -35,6 +35,9 @@ public class MapController {
     @FXML private Button save;
     private Timeline timer;
 
+    /**
+     * Manages the display of the map screen.
+     */
     @FXML
     private void initialize() {
         SystemManager game = Main.getGame();
@@ -100,6 +103,10 @@ public class MapController {
         refreshMap(game);
     }
 
+    /**
+     * Reloads the data displayed for each player.
+     * @param game the current game
+     */
     private void refreshPanel(SystemManager game) {
         ObservableList<Node> info = panel.getChildren();
         for (Node n: info) {
@@ -132,6 +139,10 @@ public class MapController {
         }
     }
 
+    /**
+     * Reloads the display of the map.
+     * @param game the current game
+     */
     private void refreshMap(SystemManager game) {
         ObservableList<Node> tiles = grid.getChildren();
         for (Node n: tiles) {

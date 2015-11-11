@@ -26,7 +26,10 @@ public class ConfigController {
     private int dif;
     private int map;
     private int num;
-    
+
+    /**
+     * Manages the display of the config screen.
+     */
     @SuppressWarnings("unused")
     @FXML protected void initialize() {
         difficultyBeginner.setOnAction(e -> dif = 1);
