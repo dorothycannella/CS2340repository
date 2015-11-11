@@ -1,6 +1,9 @@
 package model;
 
 public interface World {
+    int WIDTH = 9;
+    int HEIGHT = 5;
+
     void placeMule(int i, int j, Device mule);
 
     Location getTile(int i, int j);

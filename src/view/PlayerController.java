@@ -33,6 +33,7 @@ public class PlayerController {
     private String name;
     private ArrayList<String> colorCodes;
 
+    @SuppressWarnings("unused")
     @FXML protected void initialize() {
         SystemManager game = Main.getGame();
         colorCodes = new ArrayList<>(5);

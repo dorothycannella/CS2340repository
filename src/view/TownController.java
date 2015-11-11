@@ -18,7 +18,6 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class TownController {
-    Timeline timer;
     @FXML private GridPane storeGrid;
     @FXML private GridPane stats;
     @FXML private ToggleGroup menu;
@@ -54,11 +53,12 @@ public class TownController {
     @FXML private ImageView background;
     private int order;
 
+    @SuppressWarnings("unused")
     @FXML protected void initialize() {
         SystemManager game = Main.getGame();
         time.setText("0:" + String.format("%02d", game.getTime()));
         time.setVisible(true);
-        timer = new Timeline(new KeyFrame(
+        Timeline timer = new Timeline(new KeyFrame(
                 Duration.millis(10),
                 e -> {
                     time.setText("0:" + String.format("%02d",

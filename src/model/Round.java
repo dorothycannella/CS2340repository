@@ -2,18 +2,19 @@ package model;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Round implements TurnProcessor, Serializable {
     private int round;
     private int pass;
     private int time;
     private boolean timeActive;
-    private transient Timer timer;
     private transient PriorityQueue<Actor> next;
     private Actor[] players;
-    private Event event;
+    private final Event event;
     private static final long serialVersionUID = 777469922665534901L;
 
+    @SuppressWarnings("unused")
     public Round() {
         round = 1;
         pass = 0;
@@ -21,20 +22,14 @@ public class Round implements TurnProcessor, Serializable {
         event = new RandomEvent();
     }
 
-    public void stopTimer() {
-        timer.cancel();
-        timer.purge();
-        timeActive = false;
-    }
-
-    public void addPlayers(Actor[] players) {
+    public final void addPlayers(Actor[] players) {
         this.players = players;
         next = new PriorityQueue<>(players.length,
                 ((p1, p2) -> p1.getId() - p2.getId()));
         Collections.addAll(next, players);
     }
 
-    public void buyTile(Location tile) {
+    public final void buyTile(Location tile) {
         Actor buyer = next.peek();
         if (next.comparator() != null && tile.getOwner() == 0 && (round <= 2
                 || buyer.getResources(0) >= 300)) {
@@ -70,7 +65,7 @@ public class Round implements TurnProcessor, Serializable {
     }
 
     private void refreshGame() {
-        timer = new Timer();
+        Timer timer = new Timer();
         next = new PriorityQueue<>(players.length);
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -83,7 +78,7 @@ public class Round implements TurnProcessor, Serializable {
         }, 0, 1000);
     }
 
-    public void resetTurnTime() {
+    public final void resetTurnTime() {
         Actor current = next.peek();
         if (!timeActive && current.getResources(1) >= 3 + (round - 1) / 4) {
             time = 50;
@@ -97,12 +92,12 @@ public class Round implements TurnProcessor, Serializable {
         timeActive = true;
     }
 
-    public void pass() {
+    public final void pass() {
         pass++;
         nextTurn();
     }
 
-    public void gamble() {
+    public final void gamble() {
         Actor current = next.peek();
         int roundBonus = (round / 4 + 1) * 50;
         int timeBonus = ((time + 1) / 13 + 1) * 50;
@@ -114,47 +109,42 @@ public class Round implements TurnProcessor, Serializable {
         nextTurn();
     }
 
-    public void disarm() {
+    public final void disarm() {
         event.disarm();
     }
 
-    public int getTime() {
+    public final int getTime() {
         return time;
     }
 
-    public int getNextTurn() {
+    public final int getNextTurn() {
         Actor current = next.peek();
         return current.getId();
     }
 
-    public int getRound() {
+    public final int getRound() {
         return round;
     }
 
-    public int getEventType() {
+    public final int getEventType() {
         return event.getType();
     }
 
-    public boolean getPhase() {
+    public final boolean getPhase() {
         return next.comparator() != null;
     }
 
-    public List<Actor> getTurnOrder() {
-        List<Actor> ret = new ArrayList<>();
-        for (Actor n: next) {
-            ret.add(n);
-        }
-        return ret;
+    public final List<Actor> getTurnOrder() {
+        return next.stream().collect(Collectors.toList());
     }
 
-    public void setTurnOrder(List<Actor> load, boolean phase) {
-        refreshGame();
+    public final void setTurnOrder(List<Actor> load, boolean phase) {
         if (phase) {
             next = new PriorityQueue<>(players.length,
                     ((p1, p2) -> p1.getId() - p2.getId()));
+        } else {
+            refreshGame();
         }
-        for (Actor l: load) {
-            next.add(l);
-        }
+        next.addAll(load.stream().collect(Collectors.toList()));
     }
 }

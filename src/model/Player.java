@@ -4,32 +4,33 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player implements Actor, Comparable<Actor> , Serializable {
-    private int id;
-    private String[] data;
-    private int[] resources;
-    private List<Location> tiles;
+public class Player implements Actor, Comparable<Actor>, Serializable {
+    private final int id;
+    private final String[] data;
+    private final int[] resources;
+    private final List<Location> tiles;
     private Device mule;
 
+    @SuppressWarnings("unused")
     public Player(int d, int i, String race, String color, String name) {
         id = i;
-        data = new String[3];
+        data = new String[DATA_SIZE];
         data[0] = race;
         data[1] = color;
         data[2] = name;
-        resources = new int[5];
-        resources[0] = 1000;
+        resources = new int[RESOURCES_SIZE];
+        resources[0] = DEFAULT_MONEY;
         if (race.equals("Flapper")) {
-            resources[0] = 1600;
+            resources[0] = FLAPPER_MONEY;
         } else if (race.equals("Human")) {
-            resources[0] = 600;
+            resources[0] = HUMAN_MONEY;
         }
-        resources[1] = d == 1 ? 8 : 4;
+        resources[1] = d == 1 ? BEGINNER_RESOURCES : STANDARD_RESOURCES;
         resources[2] = resources[1] / 2;
         tiles = new ArrayList<>();
     }
 
-    public void calculateProduction() {
+    public final void calculateProduction() {
         for (Location tile: tiles) {
             int[] income = tile.calculateProduction();
             for (int i = 0; i < income.length; i++) {
@@ -41,40 +42,42 @@ public class Player implements Actor, Comparable<Actor> , Serializable {
         }
     }
 
-    public void addResources(int type, int quantity) {
+    public final void addResources(int type, int quantity) {
         resources[type] += quantity;
     }
 
-    public void addTile(Location tile) {
+    public final void addTile(Location tile) {
         tiles.add(tile);
     }
 
-    public int getId() {
+    public final int getId() {
         return id;
     }
 
-    public String getData(int type) {
+    public final String getData(int type) {
         return data[type];
     }
 
-    public int getResources(int type) {
+    public final int getResources(int type) {
         return resources[type];
     }
 
-    public Device getMule() {
+    public final Device getMule() {
         return mule;
     }
 
-    public void setMule(Device m) {
+    public final void setMule(Device m) {
         mule = m;
     }
 
-    public int getScore() {
-        return resources[0] + 500 * tiles.size() + 30 * resources[1]
-                + 25 * resources[2] + 50 * resources[3] + 100 * resources[4];
+    public final int getScore() {
+        return resources[0] + TILES_SCORE * tiles.size() + FOOD_SCORE
+                * resources[1] + ENERGY_SCORE * resources[2] + SMITHORE_SCORE
+                * resources[3] + CRYSTITE_SCORE * resources[4];
     }
 
-    public int compareTo(Actor other) {
+    @SuppressWarnings("NullableProblems")
+    public final int compareTo(Actor other) {
         return this.getScore() - other.getScore();
     }
 }

@@ -3,13 +3,14 @@ package model;
 import java.io.Serializable;
 
 public class Mule implements Device, Serializable {
-    private int type;
+    private final int type;
 
+    @SuppressWarnings("unused")
     public Mule(int t) {
         type = t;
     }
 
-    public int getType() {
+    public final int getType() {
         return type;
     }
 }

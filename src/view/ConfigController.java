@@ -27,6 +27,7 @@ public class ConfigController {
     private int map;
     private int num;
     
+    @SuppressWarnings("unused")
     @FXML protected void initialize() {
         difficultyBeginner.setOnAction(e -> dif = 1);
         difficultyStandard.setOnAction(e -> dif = 2);
@@ -54,7 +55,6 @@ public class ConfigController {
             }
         });
         load.setOnAction(e ->{
-            //SystemManager game = new Game(0, 0, 0);
             Main.setGame(new Game(0,0,0));
             try {
                 Main.getGame().loadGame();

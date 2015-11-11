@@ -34,9 +34,8 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public final void start(Stage stage) throws IOException {
         window = stage;
-        window.setOnCloseRequest(e -> game.stopTimer());
         swapPane(getClass().getResource("config.fxml"));
     }
 }

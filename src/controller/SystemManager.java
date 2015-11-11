@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface SystemManager {
-    void stopTimer();
+    int MAX_PLAYERS = 4;
 
     void setPlayer(int id, String race, String color, String name);
 

@@ -25,6 +25,7 @@ public class ConfirmController {
     @FXML private Text nam;
     @FXML private Button next;
 
+    @SuppressWarnings("unused")
     @FXML protected void initialize() {
         SystemManager game = Main.getGame();
         String[] difficultyCodes = {"Beginner Level", "Standard Level",

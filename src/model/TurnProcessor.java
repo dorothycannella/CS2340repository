@@ -3,8 +3,6 @@ package model;
 import java.util.List;
 
 public interface TurnProcessor {
-    void stopTimer();
-    
     void addPlayers(Actor[] players);
 
     void buyTile(Location tile);
