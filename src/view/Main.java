@@ -7,6 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -40,6 +44,12 @@ public class Main extends Application {
         window.setTitle("MULE");
         window.setScene(new Scene(root, 960, 540));
         window.show();
+
+        // create media player
+        Media media = new Media(new File("src/view/assets/bgm.mp3").toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        //mediaPlayer.setAutoPlay(true);
+        mediaPlayer.play();
     }
 
     /**
