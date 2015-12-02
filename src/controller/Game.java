@@ -28,7 +28,11 @@ public class Game implements SystemManager, Serializable {
         mapType = m;
         playerNum = n;
         rand = new Random();
-        map = new Map();
+        if (m == 1) {
+            map = new Map();
+        } else {
+            map = new RandomMap();
+        }
         round = new Round();
         players = new Player[MAX_PLAYERS];
     }
