@@ -1,7 +1,7 @@
 package model;
 
 interface Event {
-    int NUM_EVENTS = 7;
+    int NUM_EVENTS = 10;
 
     /**
      * Add/remove resources from the current player based

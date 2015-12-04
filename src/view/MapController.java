@@ -56,7 +56,14 @@ public class MapController {
                         + "OLE HALF YOUR FOOD.",
                 "YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN.\nIT COST YOU"
                         + " $" + 150 * (game.getRound() / 4 + 1)
-                        + " TO CLEAN IT UP."
+                        + " TO CLEAN IT UP.",
+                "A DISTANT RELATIVE DIED AND LEFT YOU A VAST FORTUNE."
+                        + "\nBUT AFTER TAXES YOU ONLY GOT $"
+                        + 100 * (game.getRound() / 4 + 1) + ".",
+                "THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER FOR $"
+                        + 200 * (game.getRound() / 4 + 1) + ".",
+                "YOUR CHILD WAS BITTEN BY A BAT LIZARD AND THE HOSPITAL BILL COST YOU $"
+                        + 100 * (game.getRound() / 4 + 1) + "."
         };
         if (!game.getPhase() && game.getEventType() > -1) {
             event.setText(eventText[game.getEventType()]);

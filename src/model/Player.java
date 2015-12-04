@@ -24,6 +24,10 @@ public class Player implements Actor, Comparable<Actor>, Serializable {
             resources[0] = FLAPPER_MONEY;
         } else if (race.equals("Human")) {
             resources[0] = HUMAN_MONEY;
+        } else if (race.equals("Black Mamba")) {
+            resources[0] = BLACK_MAMBA_MONEY;
+        } else if (race.equals("Whumpoos")) {
+            resources[0] = WHUMPOOS_MONEY;
         }
         resources[1] = d == 1 ? BEGINNER_RESOURCES : STANDARD_RESOURCES;
         resources[2] = resources[1] / 2;

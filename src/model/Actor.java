@@ -5,7 +5,9 @@ public interface Actor {
     int RESOURCES_SIZE = 5;
     int DEFAULT_MONEY = 1000;
     int FLAPPER_MONEY = 1600;
+    int WHUMPOOS_MONEY = 500;
     int HUMAN_MONEY = 600;
+    int BLACK_MAMBA_MONEY = 12345;
     int BEGINNER_RESOURCES = 8;
     int STANDARD_RESOURCES = 4;
     int TILES_SCORE = 500;

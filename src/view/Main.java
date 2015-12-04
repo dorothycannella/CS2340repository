@@ -44,12 +44,6 @@ public class Main extends Application {
         window.setTitle("MULE");
         window.setScene(new Scene(root, 960, 540));
         window.show();
-
-        // create media player
-        Media media = new Media(new File("src/view/assets/bgm.mp3").toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        //mediaPlayer.setAutoPlay(true);
-        mediaPlayer.play();
     }
 
     /**
@@ -69,5 +63,12 @@ public class Main extends Application {
     public final void start(Stage stage) throws IOException {
         window = stage;
         swapPane(getClass().getResource("config.fxml"));
+
+        // create media player
+        Media media = new Media(new File("src/view/assets/bgm.mp3").toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE);
+
     }
 }

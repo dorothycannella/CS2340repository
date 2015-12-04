@@ -1,104 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?scenebuilder-stylesheet controlStyle.css?>
-
+<?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import java.net.URL?>
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-          prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="view.PlayerController">
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PlayerController">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="97.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="88.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="102.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="126.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="108.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="117.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints maxHeight="108.83084106445312" minHeight="10.0" prefHeight="108.83084106445312"
-                        vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="126.19046783447266" minHeight="10.0" prefHeight="69.16915893554688"
-                        vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="143.45201110839844" minHeight="10.0" prefHeight="74.80953216552734"
-                        vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="149.19046020507812" minHeight="10.0" prefHeight="72.54798889160156"
-                        vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="74.83651733398438" minHeight="10.0" prefHeight="13.9075927734375" vgrow="SOMETIMES"/>
+      <RowConstraints maxHeight="108.83084106445312" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="108.83084106445312" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="126.19046783447266" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="143.45201110839844" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="149.19046020507812" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="74.83651733398438" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <stylesheets>
-        <URL value="@controlStyle.css"/>
+        <URL value="@controlStyle.css" />
     </stylesheets>
-    <Text fx:id="prompt" fill="#e6e6cc" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Configuration"
-          wrappingWidth="391.25643277168274">
-        <font>
-            <Font size="32.0"/>
-        </font>
-        <GridPane.margin>
-            <Insets left="20.0"/>
-        </GridPane.margin>
-    </Text>
-    <Text fill="#6699cc" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" textAlignment="RIGHT"
-          wrappingWidth="89.2069091796875" GridPane.rowIndex="1">
-        <GridPane.margin>
-            <Insets left="5.0"/>
-        </GridPane.margin>
-    </Text>
-    <Text fill="#cccc99" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Race:" textAlignment="RIGHT"
-          wrappingWidth="91.05823516845703" GridPane.rowIndex="2">
-        <GridPane.margin>
-            <Insets left="5.0"/>
-        </GridPane.margin>
-    </Text>
-    <RadioButton fx:id="bonzoid" mnemonicParsing="false" text="Bonzoid" textFill="#cccc99" GridPane.columnIndex="2"
-                 GridPane.rowIndex="2">
-        <toggleGroup>
-            <ToggleGroup fx:id="races"/>
-        </toggleGroup>
-    </RadioButton>
-    <RadioButton fx:id="human" mnemonicParsing="false" text="Human" textFill="#cccc99" toggleGroup="$races"
-                 GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <RadioButton fx:id="blue" mnemonicParsing="false" text="Blue" textFill="BLUE" GridPane.columnIndex="1"
-                 GridPane.rowIndex="3">
-        <toggleGroup>
-            <ToggleGroup fx:id="colors"/>
-        </toggleGroup>
-    </RadioButton>
-    <RadioButton fx:id="ugaite" mnemonicParsing="false" text="Ugaite" textFill="#cccc99" toggleGroup="$races"
-                 GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-    <RadioButton fx:id="green" mnemonicParsing="false" text="Green" textFill="GREEN" toggleGroup="$colors"
-                 GridPane.columnIndex="2" GridPane.rowIndex="3"/>
-    <RadioButton fx:id="yellow" mnemonicParsing="false" text="Yellow" textFill="YELLOW" toggleGroup="$colors"
-                 GridPane.columnIndex="3" GridPane.rowIndex="3"/>
-    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Color:" textAlignment="RIGHT"
-          wrappingWidth="88.72981262207031" GridPane.rowIndex="3">
-        <GridPane.margin>
-            <Insets left="5.0"/>
-        </GridPane.margin>
-    </Text>
-    <Button fx:id="next" mnemonicParsing="false" text="NEXT" textAlignment="CENTER" GridPane.columnIndex="5"
-            GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
-        <opaqueInsets>
-            <Insets/>
-        </opaqueInsets>
-        <GridPane.margin>
-            <Insets bottom="20.0" right="20.0"/>
-        </GridPane.margin>
-    </Button>
-    <RadioButton fx:id="red" mnemonicParsing="false" text="Red" textFill="RED" toggleGroup="$colors"
-                 GridPane.columnIndex="4" GridPane.rowIndex="3"/>
-    <RadioButton fx:id="orange" mnemonicParsing="false" text="Orange" textFill="ORANGE" toggleGroup="$colors"
-                 GridPane.columnIndex="5" GridPane.rowIndex="3"/>
-    <RadioButton fx:id="buzzite" mnemonicParsing="false" text="Buzzite" textFill="#cccc99" toggleGroup="$races"
-                 GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-    <RadioButton fx:id="flapper" mnemonicParsing="false" text="Flapper" textFill="#cccc99" toggleGroup="$races"
-                 GridPane.columnIndex="5" GridPane.rowIndex="2"/>
-    <TextField fx:id="typefield" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
-        <GridPane.margin>
-            <Insets right="10.0"/>
-        </GridPane.margin>
-    </TextField>
+   <children>
+       <Text fx:id="prompt" fill="#e6e6cc" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Configuration" wrappingWidth="391.25643277168274">
+           <font>
+               <Font size="32.0" />
+           </font>
+           <GridPane.margin>
+               <Insets left="20.0" />
+           </GridPane.margin>
+       </Text>
+       <Text fill="#6699cc" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" textAlignment="RIGHT" wrappingWidth="88.2069091796875" GridPane.rowIndex="1">
+           <GridPane.margin>
+               <Insets left="5.0" />
+           </GridPane.margin>
+       </Text>
+       <Text fill="#cccc99" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Race:" textAlignment="RIGHT" wrappingWidth="94.05823516845703" GridPane.rowIndex="2">
+           <GridPane.margin>
+               <Insets left="5.0" />
+           </GridPane.margin>
+       </Text>
+       <RadioButton fx:id="bonzoid" mnemonicParsing="false" text="Bonzoid" textFill="#cccc99" GridPane.columnIndex="2" GridPane.rowIndex="2">
+           <toggleGroup>
+               <ToggleGroup fx:id="races" />
+           </toggleGroup>
+       </RadioButton>
+       <RadioButton fx:id="human" mnemonicParsing="false" text="Human" textFill="#cccc99" toggleGroup="$races" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+       <RadioButton fx:id="blue" mnemonicParsing="false" text="Blue" textFill="BLUE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+           <toggleGroup>
+               <ToggleGroup fx:id="colors" />
+           </toggleGroup>
+       </RadioButton>
+       <RadioButton fx:id="ugaite" mnemonicParsing="false" text="Ugaite" textFill="#cccc99" toggleGroup="$races" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+       <RadioButton fx:id="green" mnemonicParsing="false" text="Green" textFill="GREEN" toggleGroup="$colors" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+       <RadioButton fx:id="yellow" mnemonicParsing="false" text="Yellow" textFill="YELLOW" toggleGroup="$colors" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+       <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Color:" textAlignment="RIGHT" wrappingWidth="88.72981262207031" GridPane.rowIndex="4">
+           <GridPane.margin>
+               <Insets left="5.0" />
+           </GridPane.margin>
+       </Text>
+       <Button fx:id="next" mnemonicParsing="false" text="NEXT" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+           <opaqueInsets>
+               <Insets />
+           </opaqueInsets>
+           <GridPane.margin>
+               <Insets bottom="20.0" right="20.0" />
+           </GridPane.margin>
+       </Button>
+       <RadioButton fx:id="red" mnemonicParsing="false" text="Red" textFill="RED" toggleGroup="$colors" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+       <RadioButton fx:id="orange" mnemonicParsing="false" text="Orange" textFill="ORANGE" toggleGroup="$colors" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+       <RadioButton fx:id="buzzite" mnemonicParsing="false" text="Buzzite" textFill="#cccc99" toggleGroup="$races" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+       <RadioButton fx:id="flapper" mnemonicParsing="false" text="Flapper" textFill="#cccc99" toggleGroup="$races" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+       <TextField fx:id="typefield" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+           <GridPane.margin>
+               <Insets right="10.0" />
+           </GridPane.margin>
+       </TextField>
+      <RadioButton fx:id="mamba" mnemonicParsing="false" text="Black Mamba" textFill="#cccc99" toggleGroup="$races" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <RadioButton fx:id="whumpoos" mnemonicParsing="false" text="Whumpoos" textFill="#cccc99" toggleGroup="$races" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+   </children>
 </GridPane>

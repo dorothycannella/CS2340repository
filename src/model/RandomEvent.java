@@ -29,6 +29,12 @@ public class RandomEvent implements Event, Serializable {
             current.addResources(1, current.getResources(1) / -2);
         } else if (!first && type == 6) {
             current.addResources(0, -6 * m);
+        } else if (type == 7) {
+            current.addResources(0, 4 * m);
+        } else if (type == 8) {
+            current.addResources(0, 8 * m);
+        } else if (!first && type == 9) {
+            current.addResources(0, -4 * m);
         } else {
             disarm();
         }
