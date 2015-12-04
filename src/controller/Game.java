@@ -48,7 +48,7 @@ public class Game implements SystemManager, Serializable {
     public final void setComputers(List<String> colorCodes) {
         if (players[MAX_PLAYERS - 1] == null) {
             String[] raceCodes = {"Human", "Flapper", "Bonzoid", "Buzzite",
-                    "Ugaite"};
+                    "Ugaite", "Whumpoos", "Black Mamba"};
             for (int i = MAX_PLAYERS; i > playerNum; i--) {
                 players[i - 1] = new Player(difficulty, i,
                         raceCodes[rand.nextInt(raceCodes.length)],

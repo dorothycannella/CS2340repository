@@ -19,6 +19,8 @@ public class PlayerController {
     @FXML private RadioButton bonzoid;
     @FXML private RadioButton buzzite;
     @FXML private RadioButton ugaite;
+    @FXML private RadioButton mamba;
+    @FXML private RadioButton whumpoos;
     @FXML private ToggleGroup colors;
     @FXML private RadioButton red;
     @FXML private RadioButton orange;
@@ -50,6 +52,8 @@ public class PlayerController {
         bonzoid.setOnAction(e -> race = "Bonzoid");
         buzzite.setOnAction(e -> race = "Buzzite");
         ugaite.setOnAction(e -> race = "Ugaite");
+        whumpoos.setOnAction(e -> race = "Whumpoos");
+        mamba.setOnAction(e -> race = "Black Mamba");
         red.setOnAction(e -> color = "Red");
         orange.setOnAction(e -> color = "Orange");
         blue.setOnAction(e -> color = "Blue");
